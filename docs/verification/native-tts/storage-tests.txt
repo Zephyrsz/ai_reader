@@ -1,0 +1,381 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project AIReader.xcodeproj -scheme AIReader -destination "platform=iOS Simulator,id=2ABE704A-80B9-4A59-9D19-A80CFD48A6BF" -derivedDataPath .build/NativeTTS -resultBundlePath .build/native-storage-final.xcresult -parallel-testing-enabled NO -collect-test-diagnostics never "-only-testing:AIReaderUITests/AIReaderUITests/testStorageCacheAndConfirmedReset" test
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  ReaderCore: /Users/rgwei/pj/pj_my/ai_reader @ local
+
+Writing result bundle at path:
+	/Users/rgwei/pj/pj_my/ai_reader/.build/native-storage-final.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'AIReaderNativeTests' in project 'AIReader'
+        ➜ Explicit dependency on target 'AIReader' in project 'AIReader'
+        ➜ Explicit dependency on target 'ReaderCore-product' in project 'ReaderCore'
+    Target 'AIReaderUITests' in project 'AIReader'
+        ➜ Explicit dependency on target 'AIReader' in project 'AIReader'
+    Target 'AIReader' in project 'AIReader'
+        ➜ Explicit dependency on target 'ReaderCore-product' in project 'ReaderCore'
+    Target 'ReaderCore-product' in project 'ReaderCore'
+        ➜ Explicit dependency on target 'ReaderCore' in project 'ReaderCore'
+    Target 'ReaderCore' in project 'ReaderCore' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/rgwei/pj/pj_my/ai_reader/AIReader/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: d56e55701c1c5e988717b044bc094c8e
+Build description path: /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/XCBuildData/d56e55701c1c5e988717b044bc094c8e.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/rgwei/pj/pj_my/ai_reader/AIReader.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache
+
+SwiftDriver AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AIReader (in target 'AIReader' from project 'AIReader')
+
+SwiftCompile normal arm64 (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AIReader (in target 'AIReader' from project 'AIReader')
+
+SwiftDriver\ Compilation\ Requirements AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftsourceinfo (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftsourceinfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.abi.json (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.abi.json /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ReaderCore.build/Debug-iphonesimulator/ReaderCore-product-t.build/empty-ReaderCore_2071B1312739E2E6_PackageProduct.plist (in target 'ReaderCoredynamic-product' from project 'ReaderCore')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ReaderCore.build/Debug-iphonesimulator/ReaderCore-product-t.build/empty-ReaderCore_2071B1312739E2E6_PackageProduct.plist -producttype com.apple.product-type.framework -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/Info.plist
+
+SwiftCompile normal arm64 Compiling\ StorageSettingsView.swift /Users/rgwei/pj/pj_my/ai_reader/AIReader/Features/Settings/StorageSettingsView.swift (in target 'AIReader' from project 'AIReader')
+
+SwiftCompile normal arm64 /Users/rgwei/pj/pj_my/ai_reader/AIReader/Features/Settings/StorageSettingsView.swift (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-SwiftPerFileCompile StorageSettingsView.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling StorageSettingsView.swift (in target 'AIReader' from project 'AIReader')
+
+SwiftDriver\ Compilation AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib normal (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -filelist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.LinkFileList -install_name @rpath/AIReader.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_lto.o -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/ReaderCore_2071B1312739E2E6_PackageProduct -framework voicevox_core -framework voicevox_onnxruntime -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    construct-stub-executor-link-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'AIReader' from project 'AIReader')
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader normal (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.app-Simulated.xcent.der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Info.plist /Users/rgwei/pj/pj_my/ai_reader/AIReader/Info.plist (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/AIReader/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Info.plist
+
+ExtractAppIntentsMetadata (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --module-name AIReader --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier dev.aireader.local --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader --dependency-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_dependency_info.dat --stringsdata-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList --metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.DependencyMetadataFileList --static-metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.DependencyStaticMetadataFileList --swift-const-vals-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 20:47:10.124 appintentsmetadataprocessor[95086:42140009] Starting appintentsmetadataprocessor export
+2026-10-24 20:47:10.125 appintentsmetadataprocessor[95086:42140009] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Extensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests normal (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -filelist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -bundle_loader /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader -Xlinker -object_path_lto -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_lto.o -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/ReaderCore_2071B1312739E2E6_PackageProduct /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/empty-AIReaderNativeTests.plist (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/empty-AIReaderNativeTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Info.plist
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Extensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --module-name AIReaderNativeTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier dev.aireader.local.native-tests --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests --dependency-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_dependency_info.dat --stringsdata-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.SwiftFileList --metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/AIReaderNativeTests.DependencyMetadataFileList --static-metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/AIReaderNativeTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 20:47:10.300 appintentsmetadataprocessor[95090:42140032] Starting appintentsmetadataprocessor export
+2026-10-24 20:47:10.301 appintentsmetadataprocessor[95090:42140032] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib
+/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib: replacing existing signature
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app
+
+Validate /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-validationUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app -shallow-bundle -infoplist-subpath Info.plist
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/empty-AIReaderUITests.plist (in target 'AIReaderUITests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/empty-AIReaderUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Info.plist
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest (in target 'AIReaderUITests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/AIReaderUITests --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+2026-10-24 20:47:10.547 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:11.359788+0800 AIReaderUITests-Runner[95119:42140268] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'Selected tests' started at 2026-10-24 20:47:13.368.
+Test Suite 'AIReaderUITests.xctest' started at 2026-10-24 20:47:13.368.
+Test Suite 'AIReaderUITests' started at 2026-10-24 20:47:13.368.
+Test Case '-[AIReaderUITests.AIReaderUITests testStorageCacheAndConfirmedReset]' started.
+    t =     0.00s Start Test at 2026-10-24 20:47:13.370
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.02s         Wait for com.apple.springboard to idle
+    t =     0.03s     Open dev.aireader.local
+    t =     0.03s         Launch dev.aireader.local
+2026-10-24 20:47:13.436 xcodebuild[95015:42139530] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:47:13.436 xcodebuild[95015:42139530] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:47:13.440 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+objc[95119]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.BEBgeB/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x10ace8398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.BEBgeB/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x10adf4310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     2.53s             Setting up automation session
+    t =     4.09s             Wait for dev.aireader.local to idle
+    t =     5.50s Waiting 5.0s for "newText" Button to exist
+    t =     6.55s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     6.55s         Checking existence of `"newText" Button`
+    t =     6.63s Tap "newText" Button
+    t =     6.63s     Wait for dev.aireader.local to idle
+    t =     6.63s     Find the "newText" Button
+    t =     6.65s     Check for interrupting elements affecting "newText" Button
+    t =     6.66s     Synthesize event
+    t =     6.97s     Wait for dev.aireader.local to idle
+    t =     7.43s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     8.50s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     8.50s         Checking existence of `"editorTitle" TextField`
+    t =     8.57s Tap "editorTitle" TextField
+    t =     8.57s     Wait for dev.aireader.local to idle
+    t =     8.57s     Find the "editorTitle" TextField
+    t =     8.60s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.62s     Synthesize event
+    t =     8.91s     Wait for dev.aireader.local to idle
+    t =     8.97s Type '消去の確認' into "editorTitle" TextField
+    t =     8.97s     Wait for dev.aireader.local to idle
+    t =     9.36s     Find the "editorTitle" TextField
+    t =     9.44s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     9.47s     Synthesize event
+    t =     9.76s     Wait for dev.aireader.local to idle
+    t =     9.76s Tap "editorBody" TextView
+    t =     9.76s     Wait for dev.aireader.local to idle
+    t =     9.77s     Find the "editorBody" TextView
+    t =     9.82s     Check for interrupting elements affecting "editorBody" TextView
+    t =     9.85s     Synthesize event
+    t =    10.14s     Wait for dev.aireader.local to idle
+    t =    10.14s Type 'この資料はテスト専用です。' into "editorBody" TextView
+    t =    10.14s     Wait for dev.aireader.local to idle
+    t =    10.14s     Find the "editorBody" TextView
+    t =    10.19s     Check for interrupting elements affecting "editorBody" TextView
+    t =    10.22s     Synthesize event
+    t =    10.64s     Wait for dev.aireader.local to idle
+    t =    10.64s Tap "收起键盘" Button
+    t =    10.64s     Wait for dev.aireader.local to idle
+    t =    10.65s     Find the "收起键盘" Button
+    t =    10.71s     Check for interrupting elements affecting "收起键盘" Button
+    t =    10.74s     Synthesize event
+    t =    11.03s     Wait for dev.aireader.local to idle
+    t =    11.26s Tap "saveText" Button
+    t =    11.26s     Wait for dev.aireader.local to idle
+    t =    11.26s     Find the "saveText" Button
+    t =    11.30s     Check for interrupting elements affecting "saveText" Button
+    t =    11.33s     Synthesize event
+    t =    11.62s     Wait for dev.aireader.local to idle
+    t =    12.03s Waiting 5.0s for "newText" Button to exist
+    t =    13.08s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    13.08s         Checking existence of `"newText" Button`
+    t =    13.11s Tap "文件库" Button
+    t =    13.11s     Wait for dev.aireader.local to idle
+    t =    13.12s     Find the "文件库" Button
+    t =    13.14s     Check for interrupting elements affecting "folder" Button
+    t =    13.16s     Synthesize event
+    t =    13.45s     Wait for dev.aireader.local to idle
+    t =    15.26s Tap Button (First Match)
+    t =    15.26s     Wait for dev.aireader.local to idle
+    t =    15.26s     Find the Button (First Match)
+    t =    15.32s     Check for interrupting elements affecting "消去の確認、文本 · 日本語 · 2026年10月24日" Button
+    t =    15.34s     Synthesize event
+    t =    15.63s     Wait for dev.aireader.local to idle
+    t =    15.98s Waiting 5.0s for "reader.back" Button to exist
+    t =    17.04s     Checking `Expect predicate `existsNoRetry == 1` for object "reader.back" Button`
+    t =    17.04s         Checking existence of `"reader.back" Button`
+    t =    17.07s Tap "reader.back" Button
+    t =    17.07s     Wait for dev.aireader.local to idle
+    t =    17.07s     Find the "reader.back" Button
+    t =    17.08s     Check for interrupting elements affecting "reader.back" Button
+    t =    17.10s     Synthesize event
+    t =    17.39s     Wait for dev.aireader.local to idle
+    t =    17.69s Tap "设置" Button
+    t =    17.69s     Wait for dev.aireader.local to idle
+    t =    17.70s     Find the "设置" Button
+    t =    17.72s     Check for interrupting elements affecting "gearshape" Button
+    t =    17.74s     Synthesize event
+    t =    18.03s     Wait for dev.aireader.local to idle
+    t =    19.82s Tap "settings.storage" Button
+    t =    19.82s     Wait for dev.aireader.local to idle
+    t =    19.83s     Find the "settings.storage" Button
+    t =    19.87s     Check for interrupting elements affecting "settings.storage" Button
+    t =    19.89s     Synthesize event
+    t =    20.18s     Wait for dev.aireader.local to idle
+    t =    20.52s Waiting 5.0s for "storage.clearExportCache" Button to exist
+    t =    21.56s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.clearExportCache" Button`
+    t =    21.57s         Checking existence of `"storage.clearExportCache" Button`
+    t =    21.62s Find the "storage.clearExportCache" Button
+    t =    21.65s Tap "storage.clearExportCache" Button
+    t =    21.65s     Wait for dev.aireader.local to idle
+    t =    21.65s     Find the "storage.clearExportCache" Button
+    t =    21.68s     Check for interrupting elements affecting "storage.clearExportCache" Button
+    t =    21.70s     Synthesize event
+    t =    21.99s     Wait for dev.aireader.local to idle
+    t =    23.30s Checking `Expect predicate `isEnabled == 0` for object "storage.clearExportCache" Button`
+    t =    23.30s     Find the "storage.clearExportCache" Button
+    t =    23.35s Find the "storage.clearSpeechCache" Button
+    t =    23.38s Waiting 5.0s for "storage.clearSpeechCache" Button to exist
+    t =    24.45s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.clearSpeechCache" Button`
+    t =    24.45s         Checking existence of `"storage.clearSpeechCache" Button`
+    t =    24.50s Tap "storage.clearSpeechCache" Button
+    t =    24.50s     Wait for dev.aireader.local to idle
+    t =    24.50s     Find the "storage.clearSpeechCache" Button
+    t =    24.53s     Check for interrupting elements affecting "storage.clearSpeechCache" Button
+    t =    24.55s     Synthesize event
+    t =    24.84s     Wait for dev.aireader.local to idle
+    t =    25.09s Find the "storage.resetLibrary" Button
+    t =    26.12s     Find the "storage.resetLibrary" Button (retry 1)
+    t =    27.16s     Find the "storage.resetLibrary" Button (retry 2)
+    t =    27.20s Swipe up Target Application 'dev.aireader.local'
+    t =    27.20s     Wait for dev.aireader.local to idle
+    t =    27.20s     Find the Target Application 'dev.aireader.local'
+    t =    27.22s     Check for interrupting elements affecting "AI Reader" Application
+    t =    27.25s     Synthesize event
+    t =    27.67s     Wait for dev.aireader.local to idle
+    t =    28.40s Find the "storage.resetLibrary" Button
+    t =    28.46s Find the "storage.resetLibrary" Button
+    t =    28.49s Waiting 5.0s for "storage.resetLibrary" Button to exist
+    t =    29.55s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.resetLibrary" Button`
+    t =    29.55s         Checking existence of `"storage.resetLibrary" Button`
+    t =    29.60s Tap "storage.resetLibrary" Button
+    t =    29.60s     Wait for dev.aireader.local to idle
+    t =    29.60s     Find the "storage.resetLibrary" Button
+    t =    29.63s     Check for interrupting elements affecting "storage.resetLibrary" Button
+    t =    29.66s     Synthesize event
+    t =    29.94s     Wait for dev.aireader.local to idle
+    t =    30.34s Tap "继续" Button
+    t =    30.34s     Wait for dev.aireader.local to idle
+    t =    30.35s     Find the "继续" Button
+    t =    30.39s     Check for interrupting elements affecting "storage.continueReset" Button
+    t =    30.42s     Synthesize event
+    t =    30.72s     Wait for dev.aireader.local to idle
+    t =    31.42s Waiting 5.0s for "删除所有本地资料" Button to exist
+    t =    32.47s     Checking `Expect predicate `existsNoRetry == 1` for object "删除所有本地资料" Button`
+    t =    32.47s         Checking existence of `"删除所有本地资料" Button`
+    t =    32.53s Tap "删除所有本地资料" Button
+    t =    32.53s     Wait for dev.aireader.local to idle
+    t =    32.53s     Find the "删除所有本地资料" Button
+    t =    32.56s     Check for interrupting elements affecting "storage.confirmReset" Button
+    t =    32.59s     Synthesize event
+    t =    32.88s     Wait for dev.aireader.local to idle
+    t =    33.32s Tap "文件库" Button
+    t =    33.32s     Wait for dev.aireader.local to idle
+    t =    33.32s     Find the "文件库" Button
+    t =    33.36s     Check for interrupting elements affecting "folder" Button
+    t =    33.39s     Synthesize event
+    t =    33.67s     Wait for dev.aireader.local to idle
+    t =    35.42s Waiting 5.0s for "这里还没有资料" StaticText to exist
+    t =    36.46s     Checking `Expect predicate `existsNoRetry == 1` for object "这里还没有资料" StaticText`
+    t =    36.47s         Checking existence of `"这里还没有资料" StaticText`
+    t =    36.49s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testStorageCacheAndConfirmedReset]' passed (36.767 seconds).
+Test Suite 'AIReaderUITests' passed at 2026-10-24 20:47:50.138.
+	 Executed 1 test, with 0 failures (0 unexpected) in 36.767 (36.770) seconds
+Test Suite 'AIReaderUITests.xctest' passed at 2026-10-24 20:47:50.139.
+	 Executed 1 test, with 0 failures (0 unexpected) in 36.767 (36.770) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 20:47:50.139.
+	 Executed 1 test, with 0 failures (0 unexpected) in 36.767 (36.772) seconds
+2026-10-24 20:47:50.178 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.178 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.179 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.189 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.189 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.189 xcodebuild[95015:42139530] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:47:50.452 xcodebuild[95015:42139530] [MT] IDETestOperationsObserverDebug: 39.928 elapsed -- Testing started completed.
+2026-10-24 20:47:50.452 xcodebuild[95015:42139530] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-24 20:47:50.452 xcodebuild[95015:42139530] [MT] IDETestOperationsObserverDebug: 39.928 sec, +39.928 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/rgwei/pj/pj_my/ai_reader/.build/native-storage-final.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

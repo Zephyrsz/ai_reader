@@ -1,0 +1,4 @@
+Xcode 27.0 (27A266a) / iOS Simulator arm64 / Release
+Command: DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project AIReader.xcodeproj -scheme AIReader -configuration Release -destination "generic/platform=iOS Simulator" -derivedDataPath .build/release CODE_SIGNING_ALLOWED=NO ARCHS=arm64 build
+2026-10-24 00:38:39.723 appintentsmetadataprocessor[52882:38620670] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+** BUILD SUCCEEDED **

@@ -1,0 +1,1820 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project AIReader.xcodeproj -scheme AIReader -destination "platform=iOS Simulator,id=2ABE704A-80B9-4A59-9D19-A80CFD48A6BF" -derivedDataPath .build/NativeTTS -resultBundlePath .build/native-ui-final.xcresult -parallel-testing-enabled NO -collect-test-diagnostics never "-only-testing:AIReaderUITests" test
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  ReaderCore: /Users/rgwei/pj/pj_my/ai_reader @ local
+
+Writing result bundle at path:
+	/Users/rgwei/pj/pj_my/ai_reader/.build/native-ui-final.xcresult
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'AIReaderNativeTests' in project 'AIReader'
+        ➜ Explicit dependency on target 'AIReader' in project 'AIReader'
+        ➜ Explicit dependency on target 'ReaderCore-product' in project 'ReaderCore'
+    Target 'AIReaderUITests' in project 'AIReader'
+        ➜ Explicit dependency on target 'AIReader' in project 'AIReader'
+    Target 'AIReader' in project 'AIReader'
+        ➜ Explicit dependency on target 'ReaderCore-product' in project 'ReaderCore'
+    Target 'ReaderCore-product' in project 'ReaderCore'
+        ➜ Explicit dependency on target 'ReaderCore' in project 'ReaderCore'
+    Target 'ReaderCore' in project 'ReaderCore' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/rgwei/pj/pj_my/ai_reader/AIReader/Resources/Assets.xcassets
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+
+Build description signature: 77fcc3d90dc3e4c9baf2ee53e0d2e2c0
+Build description path: /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/XCBuildData/77fcc3d90dc3e4c9baf2ee53e0d2e2c0.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache
+    cd /Users/rgwei/pj/pj_my/ai_reader/AIReader.xcodeproj
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache
+
+ProcessXCFramework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_onnxruntime.xcframework /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/voicevox_onnxruntime.framework ios simulator
+    cd /Users/rgwei/pj/pj_my/ai_reader/AIReader.xcodeproj
+    builtin-process-xcframework --xcframework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_onnxruntime.xcframework --platform ios --environment simulator --target-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator
+
+ProcessXCFramework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_core.xcframework /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/voicevox_core.framework ios simulator
+    cd /Users/rgwei/pj/pj_my/ai_reader/AIReader.xcodeproj
+    builtin-process-xcframework --xcframework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_core.xcframework --platform ios --environment simulator --target-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator
+
+SwiftDriver AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-SwiftDriver -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ AIReader (in target 'AIReader' from project 'AIReader')
+
+SwiftCompile normal arm64 (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for AIReader (in target 'AIReader' from project 'AIReader')
+
+SwiftDriver\ Compilation\ Requirements AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftsourceinfo (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftsourceinfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.abi.json (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.abi.json /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ReaderCore.build/Debug-iphonesimulator/ReaderCore-product-t.build/empty-ReaderCore_2071B1312739E2E6_PackageProduct.plist (in target 'ReaderCoredynamic-product' from project 'ReaderCore')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ReaderCore.build/Debug-iphonesimulator/ReaderCore-product-t.build/empty-ReaderCore_2071B1312739E2E6_PackageProduct.plist -producttype com.apple.product-type.framework -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/Info.plist
+
+CpResource /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Voicevox /Users/rgwei/pj/pj_my/ai_reader/NativeAssets/Voicevox (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/rgwei/pj/pj_my/ai_reader/NativeAssets/Voicevox /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app
+
+SwiftCompile normal arm64 Compiling\ ReadingAppearanceSheet.swift /Users/rgwei/pj/pj_my/ai_reader/AIReader/Features/Settings/ReadingAppearanceSheet.swift (in target 'AIReader' from project 'AIReader')
+
+SwiftCompile normal arm64 /Users/rgwei/pj/pj_my/ai_reader/AIReader/Features/Settings/ReadingAppearanceSheet.swift (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-SwiftPerFileCompile ReadingAppearanceSheet.swift
+
+SwiftDriverJobDiscovery normal arm64 Compiling ReadingAppearanceSheet.swift (in target 'AIReader' from project 'AIReader')
+
+SwiftDriver\ Compilation AIReader normal arm64 com.apple.xcode.tools.swift.compiler (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-Swift-Compilation -- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name AIReader -Onone @/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList -DDEBUG -strict-concurrency\=targeted -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -target arm64-apple-ios17.0-simulator -g -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Index.noindex/DataStore -swift-version 5 -I /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -emit-localized-strings -emit-localized-strings-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64 -c -j18 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKStatCaches.noindex/iphonesimulator27.1-24A94232-e829b21a6f8c9b70876ba0858053c04435d3147121984ba087c28d913653d626.sdkstatcache -output-file-map /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-OutputFileMap.json -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex -sdk-module-cache-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules -emit-dependencies -emit-module -emit-module-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -serialize-diagnostics -dependency-scan-serialize-diagnostics-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-dependency-scan.dia -validate-clang-modules-once -clang-build-session-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/ModuleCache.noindex/Session.modulevalidation -Xcc -fmodules-prune-interval\=86400 -Xcc -fmodules-prune-after\=345600 -emit-const-values -const-gather-protocols-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_const_extract_protocols.json -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-generated-files.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-own-target-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-all-non-framework-target-headers.hmap -Xcc -ivfsoverlay -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader-3ec514bc63e884e958d10710850c1f0b-VFS-iphonesimulator/all-product-headers.yaml -Xcc -iquote -Xcc /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-project-headers.hmap -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources-normal/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources/arm64 -Xcc -I/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader-Swift.h -working-directory /Users/rgwei/pj/pj_my/ai_reader -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib normal (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -filelist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.LinkFileList -install_name @rpath/AIReader.debug.dylib -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_lto.o -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.swiftmodule -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/ReaderCore_2071B1312739E2E6_PackageProduct -framework voicevox_core -framework voicevox_onnxruntime -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    construct-stub-executor-link-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'AIReader' from project 'AIReader')
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader normal (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.app-Simulated.xcent.der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_onnxruntime.xcframework/ios-arm64_x86_64-simulator/voicevox_onnxruntime.framework (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks -remove-static-executable /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_onnxruntime.xcframework/ios-arm64_x86_64-simulator/voicevox_onnxruntime.framework /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks
+
+Copy /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_core.xcframework/ios-arm64_x86_64-simulator/voicevox_core.framework (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks -remove-static-executable /Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_core.xcframework/ios-arm64_x86_64-simulator/voicevox_core.framework /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Info.plist /Users/rgwei/pj/pj_my/ai_reader/AIReader/Info.plist (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/AIReader/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/assetcatalog_generated_info.plist -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework -scanforprivacyfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Info.plist
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework
+/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_core.framework: replacing existing signature
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --preserve-metadata\=identifier,entitlements,flags --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework
+/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks/voicevox_onnxruntime.framework: replacing existing signature
+
+ExtractAppIntentsMetadata (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --module-name AIReader --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier dev.aireader.local --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader --dependency-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader_dependency_info.dat --stringsdata-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftFileList --metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.DependencyMetadataFileList --static-metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/AIReader.DependencyStaticMetadataFileList --swift-const-vals-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/Objects-normal/arm64/AIReader.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 20:39:02.215 appintentsmetadataprocessor[88889:42111827] Starting appintentsmetadataprocessor export
+2026-10-24 20:39:02.215 appintentsmetadataprocessor[88889:42111827] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Extensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReader.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+Ld /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests normal (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios17.0-simulator -bundle -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk -Os -Xlinker -no_warn_duplicate_libraries -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -F/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk/Developer/Library/Frameworks -filelist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @loader_path -Xlinker -rpath -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -bundle_loader /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader -Xlinker -object_path_lto -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_lto.o -rdynamic -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.swiftmodule -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework/ReaderCore_2071B1312739E2E6_PackageProduct /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/empty-AIReaderNativeTests.plist (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/empty-AIReaderNativeTests.plist -producttype com.apple.product-type.bundle.unit-test -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Info.plist
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Extensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/PackageFrameworks/ReaderCore_2071B1312739E2E6_PackageProduct.framework --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --module-name AIReaderNativeTests --sdk-root /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator27.1.sdk --xcode-version 27A9275 --platform-family iOS --deployment-target 17.0 --bundle-identifier dev.aireader.local.native-tests --output /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest --target-triple arm64-apple-ios17.0-simulator --binary-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest/AIReaderNativeTests --dependency-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests_dependency_info.dat --stringsdata-file /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.SwiftFileList --metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/AIReaderNativeTests.DependencyMetadataFileList --static-metadata-file-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/AIReaderNativeTests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderNativeTests.build/Objects-normal/arm64/AIReaderNativeTests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --no-app-shortcuts-localization
+2026-10-24 20:39:02.395 appintentsmetadataprocessor[88907:42111873] Starting appintentsmetadataprocessor export
+2026-10-24 20:39:02.396 appintentsmetadataprocessor[88907:42111873] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest (in target 'AIReaderNativeTests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/PlugIns/AIReaderNativeTests.xctest
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/AIReader.debug.dylib
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib
+/Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app/__preview.dylib: replacing existing signature
+
+CodeSign /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app
+
+Validate /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app (in target 'AIReader' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-validationUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReader.app -shallow-bundle -infoplist-subpath Info.plist
+
+ProcessInfoPlistFile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Info.plist /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/empty-AIReaderUITests.plist (in target 'AIReaderUITests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-infoPlistUtility /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/empty-AIReaderUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Info.plist
+
+CopySwiftLibs /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest (in target 'AIReaderUITests' from project 'AIReader')
+    cd /Users/rgwei/pj/pj_my/ai_reader
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/AIReaderUITests --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Frameworks --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/PlugIns --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/SystemExtensions --scan-folder /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.lSLoUr/Metal.xctoolchain --toolchain /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Products/Debug-iphonesimulator/AIReaderUITests-Runner.app/PlugIns/AIReaderUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/AIReader.build/Debug-iphonesimulator/AIReaderUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/SDKExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+PruneExplicitPrecompiledModules /Users/rgwei/pj/pj_my/ai_reader/.build/NativeTTS/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+2026-10-24 20:39:02.646 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:03.545523+0800 AIReaderUITests-Runner[88924:42112138] [Default] Running tests...
+    t =      nans Interface orientation changed to Portrait
+Test Suite 'All tests' started at 2026-10-24 20:39:05.887.
+Test Suite 'AIReaderUITests.xctest' started at 2026-10-24 20:39:05.887.
+Test Suite 'AIReaderUITests' started at 2026-10-24 20:39:05.887.
+Test Case '-[AIReaderUITests.AIReaderUITests testCreateReadEditAndRelaunchPersistsJapaneseText]' started.
+    t =     0.00s Start Test at 2026-10-24 20:39:05.892
+    t =     0.03s Set Up
+    t =     0.03s     Setting device orientation to Portrait
+    t =     0.03s         Wait for com.apple.springboard to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+2026-10-24 20:39:05.970 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:39:05.970 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:39:05.974 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+objc[88924]: Class UIAccessibilityLoaderWebShared is implemented in both /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.BEBgeB/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebKit.axbundle/WebKit (0x106940398) and /private/var/run/com.apple.security.cryptexd/mnt/com.apple.iPhoneOS.SimulatorRuntime-v24.1.434.0.BEBgeB/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 27.0.simruntime/Contents/Resources/RuntimeRoot/System/Library/AccessibilityBundles/WebCore.axbundle/WebCore (0x106a78310). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+    t =     0.51s             Setting up automation session
+    t =     2.40s             Wait for dev.aireader.local to idle
+    t =     3.81s Find the Target Application 'dev.aireader.local'
+    t =     3.91s Added attachment named '首页'
+    t =     3.91s Waiting 5.0s for "newText" Button to exist
+    t =     4.95s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     4.95s         Checking existence of `"newText" Button`
+    t =     4.99s Tap "newText" Button
+    t =     4.99s     Wait for dev.aireader.local to idle
+    t =     4.99s     Find the "newText" Button
+    t =     5.01s     Check for interrupting elements affecting "newText" Button
+    t =     5.03s     Synthesize event
+    t =     5.34s     Wait for dev.aireader.local to idle
+    t =     5.80s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     6.86s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     6.86s         Checking existence of `"editorTitle" TextField`
+    t =     6.91s Tap "editorTitle" TextField
+    t =     6.91s     Wait for dev.aireader.local to idle
+    t =     6.91s     Find the "editorTitle" TextField
+    t =     6.94s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     6.96s     Synthesize event
+    t =     7.25s     Wait for dev.aireader.local to idle
+    t =     7.32s Type '京都の朝' into "editorTitle" TextField
+    t =     7.32s     Wait for dev.aireader.local to idle
+    t =     7.70s     Find the "editorTitle" TextField
+    t =     7.75s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.79s     Synthesize event
+    t =     8.05s     Wait for dev.aireader.local to idle
+    t =     8.05s Tap "editorBody" TextView
+    t =     8.05s     Wait for dev.aireader.local to idle
+    t =     8.06s     Find the "editorBody" TextView
+    t =     8.11s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.15s     Synthesize event
+    t =     8.44s     Wait for dev.aireader.local to idle
+    t =     8.44s Type '京都の朝は静かです。
+今日は本を読み...' into "editorBody" TextView
+    t =     8.44s     Wait for dev.aireader.local to idle
+    t =     8.44s     Find the "editorBody" TextView
+    t =     8.49s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.53s     Synthesize event
+    t =     9.09s     Wait for dev.aireader.local to idle
+    t =     9.09s Tap "收起键盘" Button
+    t =     9.09s     Wait for dev.aireader.local to idle
+    t =     9.10s     Find the "收起键盘" Button
+    t =     9.15s     Check for interrupting elements affecting "收起键盘" Button
+    t =     9.19s     Synthesize event
+    t =     9.48s     Wait for dev.aireader.local to idle
+    t =     9.70s Find the Target Application 'dev.aireader.local'
+    t =     9.79s Added attachment named '文本编辑器'
+    t =     9.79s Tap "saveText" Button
+    t =     9.79s     Wait for dev.aireader.local to idle
+    t =     9.79s     Find the "saveText" Button
+    t =     9.82s     Check for interrupting elements affecting "saveText" Button
+    t =     9.85s     Synthesize event
+    t =    10.14s     Wait for dev.aireader.local to idle
+    t =    10.54s Waiting 5.0s for "newText" Button to exist
+    t =    11.60s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.60s         Checking existence of `"newText" Button`
+    t =    11.63s Tap "文件库" Button
+    t =    11.64s     Wait for dev.aireader.local to idle
+    t =    11.64s     Find the "文件库" Button
+    t =    11.66s     Check for interrupting elements affecting "folder" Button
+    t =    11.68s     Synthesize event
+    t =    11.97s     Wait for dev.aireader.local to idle
+    t =    13.79s Waiting 5.0s for Button (First Match) to exist
+    t =    14.83s     Checking `Expect predicate `existsNoRetry == 1` for object Button (First Match)`
+    t =    14.83s         Checking existence of `Button (First Match)`
+    t =    14.89s Tap Button (First Match)
+    t =    14.89s     Wait for dev.aireader.local to idle
+    t =    14.89s     Find the Button (First Match)
+    t =    14.93s     Check for interrupting elements affecting "京都の朝、文本 · 日本語 · 2026年10月24日" Button
+    t =    14.94s     Synthesize event
+    t =    15.23s     Wait for dev.aireader.local to idle
+    t =    15.58s Waiting 5.0s for "京都の朝は静かです。" StaticText to exist
+    t =    16.62s     Checking `Expect predicate `existsNoRetry == 1` for object "京都の朝は静かです。" StaticText`
+    t =    16.62s         Checking existence of `"京都の朝は静かです。" StaticText`
+    t =    16.64s Checking existence of `"reader.play" Button`
+    t =    16.66s Find the "reader.play" Button
+    t =    16.67s Find the Target Application 'dev.aireader.local'
+    t =    16.74s Added attachment named '文本阅读器'
+    t =    16.74s Tap "reader.find" Button
+    t =    16.74s     Wait for dev.aireader.local to idle
+    t =    16.74s     Find the "reader.find" Button
+    t =    16.75s     Check for interrupting elements affecting "reader.find" Button
+    t =    16.76s     Synthesize event
+    t =    17.06s     Wait for dev.aireader.local to idle
+    t =    17.06s Tap "reader.searchField" TextField
+    t =    17.06s     Wait for dev.aireader.local to idle
+    t =    17.07s     Find the "reader.searchField" TextField
+    t =    17.09s     Check for interrupting elements affecting "reader.searchField" TextField
+    t =    17.10s     Synthesize event
+    t =    17.40s     Wait for dev.aireader.local to idle
+    t =    17.68s Type '京都' into "reader.searchField" TextField
+    t =    17.69s     Wait for dev.aireader.local to idle
+    t =    17.69s     Find the "reader.searchField" TextField
+    t =    17.72s     Check for interrupting elements affecting "reader.searchField" TextField
+    t =    17.75s     Synthesize event
+    t =    17.98s     Wait for dev.aireader.local to idle
+    t =    17.99s Waiting 3.0s for "1 个匹配" StaticText to exist
+    t =    19.04s     Checking `Expect predicate `existsNoRetry == 1` for object "1 个匹配" StaticText`
+    t =    19.04s         Checking existence of `"1 个匹配" StaticText`
+    t =    19.09s Tap "reader.find" Button
+    t =    19.09s     Wait for dev.aireader.local to idle
+    t =    19.09s     Find the "reader.find" Button
+    t =    19.12s     Check for interrupting elements affecting "reader.find" Button
+    t =    19.14s     Synthesize event
+    t =    19.43s     Wait for dev.aireader.local to idle
+    t =    19.43s Tap "更多操作" Button
+    t =    19.43s     Wait for dev.aireader.local to idle
+    t =    19.43s     Find the "更多操作" Button
+    t =    19.45s     Check for interrupting elements affecting "更多操作" Button
+    t =    19.46s     Synthesize event
+    t =    19.75s     Wait for dev.aireader.local to idle
+    t =    20.90s Tap "添加书签" Button
+    t =    20.90s     Wait for dev.aireader.local to idle
+    t =    20.90s     Find the "添加书签" Button
+    t =    20.93s     Check for interrupting elements affecting "bookmark" Button
+    t =    20.95s     Synthesize event
+    t =    21.25s     Wait for dev.aireader.local to idle
+    t =    22.64s Waiting 3.0s for "书签与目录" Button to exist
+    t =    23.71s     Checking `Expect predicate `existsNoRetry == 1` for object "书签与目录" Button`
+    t =    23.71s         Checking existence of `"书签与目录" Button`
+    t =    23.72s Tap "更多操作" Button
+    t =    23.72s     Wait for dev.aireader.local to idle
+    t =    23.73s     Find the "更多操作" Button
+    t =    23.74s     Check for interrupting elements affecting "更多操作" Button
+    t =    23.75s     Synthesize event
+    t =    24.05s     Wait for dev.aireader.local to idle
+    t =    25.15s Tap "编辑文本" Button
+    t =    25.15s     Wait for dev.aireader.local to idle
+    t =    25.15s     Find the "编辑文本" Button
+    t =    25.18s     Check for interrupting elements affecting "pencil" Button
+    t =    25.21s     Synthesize event
+    t =    25.51s     Wait for dev.aireader.local to idle
+    t =    26.92s Waiting 3.0s for "editorTitle" TextField to exist
+    t =    27.98s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =    27.98s         Checking existence of `"editorTitle" TextField`
+    t =    28.00s Tap "editorTitle" TextField
+    t =    28.00s     Wait for dev.aireader.local to idle
+    t =    28.00s     Find the "editorTitle" TextField
+    t =    28.02s     Check for interrupting elements affecting "editorTitle" TextField
+    t =    28.04s     Synthesize event
+    t =    28.33s     Wait for dev.aireader.local to idle
+    t =    28.63s Type '・改訂' into "editorTitle" TextField
+    t =    28.63s     Wait for dev.aireader.local to idle
+    t =    28.64s     Find the "editorTitle" TextField
+    t =    28.68s     Check for interrupting elements affecting "editorTitle" TextField
+    t =    28.71s     Synthesize event
+    t =    28.97s     Wait for dev.aireader.local to idle
+    t =    28.97s Tap "saveText" Button
+    t =    28.97s     Wait for dev.aireader.local to idle
+    t =    28.98s     Find the "saveText" Button
+    t =    29.02s     Check for interrupting elements affecting "saveText" Button
+    t =    29.05s     Synthesize event
+    t =    29.35s     Wait for dev.aireader.local to idle
+    t =    29.75s Waiting 5.0s for "京都の朝は静かです。" StaticText to exist
+    t =    30.79s     Checking `Expect predicate `existsNoRetry == 1` for object "京都の朝は静かです。" StaticText`
+    t =    30.79s         Checking existence of `"京都の朝は静かです。" StaticText`
+    t =    30.82s Terminate dev.aireader.local:88996
+2026-10-24 20:39:36.719 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:36.719 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:36.720 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    31.89s Open dev.aireader.local
+    t =    31.89s     Launch dev.aireader.local
+2026-10-24 20:39:37.778 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:39:37.778 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:39:37.783 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    32.10s         Setting up automation session
+    t =    33.68s         Wait for dev.aireader.local to idle
+    t =    35.09s Tap "文件库" Button
+    t =    35.09s     Wait for dev.aireader.local to idle
+    t =    35.09s     Find the "文件库" Button
+    t =    35.16s     Check for interrupting elements affecting "文件库" Button
+    t =    35.18s     Synthesize event
+    t =    35.48s     Wait for dev.aireader.local to idle
+    t =    37.30s Waiting 5.0s for StaticText (First Match) to exist
+    t =    38.34s     Checking `Expect predicate `existsNoRetry == 1` for object StaticText (First Match)`
+    t =    38.34s         Checking existence of `StaticText (First Match)`
+    t =    38.39s Find the Target Application 'dev.aireader.local'
+    t =    38.47s Added attachment named '文件库・重启恢复'
+    t =    38.47s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testCreateReadEditAndRelaunchPersistsJapaneseText]' passed (38.710 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testDefaultSpeedAndAppearancePersistAcrossRelaunch]' started.
+    t =     0.00s Start Test at 2026-10-24 20:39:44.603
+    t =     0.02s Set Up
+    t =     0.03s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:89399
+2026-10-24 20:39:44.651 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:44.651 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:44.652 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:45.691 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:39:45.691 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:39:45.695 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.29s             Setting up automation session
+    t =     2.78s             Wait for dev.aireader.local to idle
+    t =     4.17s Tap "设置" Button
+    t =     4.17s     Wait for dev.aireader.local to idle
+    t =     4.17s     Find the "设置" Button
+    t =     4.22s     Check for interrupting elements affecting "设置" Button
+    t =     4.24s     Synthesize event
+    t =     4.55s     Wait for dev.aireader.local to idle
+    t =     6.35s Tap "settings.speedLink" Button
+    t =     6.35s     Wait for dev.aireader.local to idle
+    t =     6.36s     Find the "settings.speedLink" Button
+    t =     6.41s     Check for interrupting elements affecting "settings.speedLink" Button
+    t =     6.43s     Synthesize event
+    t =     6.71s     Wait for dev.aireader.local to idle
+    t =     7.04s Waiting 5.0s for "speed.preset.1.25" Button to exist
+    t =     8.10s     Checking `Expect predicate `existsNoRetry == 1` for object "speed.preset.1.25" Button`
+    t =     8.10s         Checking existence of `"speed.preset.1.25" Button`
+    t =     8.14s Tap "speed.preset.1.25" Button
+    t =     8.14s     Wait for dev.aireader.local to idle
+    t =     8.14s     Find the "speed.preset.1.25" Button
+    t =     8.16s     Check for interrupting elements affecting "speed.preset.1.25" Button
+    t =     8.18s     Synthesize event
+    t =     8.46s     Wait for dev.aireader.local to idle
+    t =     8.47s Find the Target Application 'dev.aireader.local'
+    t =     8.54s Added attachment named '语速设置'
+    t =     8.54s Tap "speed.done" Button
+    t =     8.54s     Wait for dev.aireader.local to idle
+    t =     8.54s     Find the "speed.done" Button
+    t =     8.56s     Check for interrupting elements affecting "speed.done" Button
+    t =     8.57s     Synthesize event
+    t =     8.86s     Wait for dev.aireader.local to idle
+    t =     9.15s Terminate dev.aireader.local:89489
+2026-10-24 20:39:53.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:53.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:39:53.772 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    10.21s Open dev.aireader.local
+    t =    10.21s     Launch dev.aireader.local
+2026-10-24 20:39:54.819 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:39:54.819 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:39:54.824 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    10.43s         Setting up automation session
+    t =    11.91s         Wait for dev.aireader.local to idle
+    t =    13.30s Tap "设置" Button
+    t =    13.30s     Wait for dev.aireader.local to idle
+    t =    13.30s     Find the "设置" Button
+    t =    13.38s     Check for interrupting elements affecting "设置" Button
+    t =    13.39s     Synthesize event
+    t =    13.70s     Wait for dev.aireader.local to idle
+    t =    15.50s Waiting 5.0s for "1.25×" StaticText to exist
+    t =    16.56s     Checking `Expect predicate `existsNoRetry == 1` for object "1.25×" StaticText`
+    t =    16.56s         Checking existence of `"1.25×" StaticText`
+    t =    16.61s Tap "settings.appearance" Button
+    t =    16.61s     Wait for dev.aireader.local to idle
+    t =    16.62s     Find the "settings.appearance" Button
+    t =    16.64s     Check for interrupting elements affecting "settings.appearance" Button
+    t =    16.66s     Synthesize event
+    t =    16.95s     Wait for dev.aireader.local to idle
+    t =    17.35s Waiting 5.0s for "深色" Button to exist
+    t =    18.40s     Checking `Expect predicate `existsNoRetry == 1` for object "深色" Button`
+    t =    18.40s         Checking existence of `"深色" Button`
+    t =    18.46s Tap "深色" Button
+    t =    18.46s     Wait for dev.aireader.local to idle
+    t =    18.46s     Find the "深色" Button
+    t =    18.49s     Check for interrupting elements affecting "深色" Button
+    t =    18.52s     Synthesize event
+    t =    18.81s     Wait for dev.aireader.local to idle
+    t =    20.44s Find the Target Application 'dev.aireader.local'
+    t =    20.54s Added attachment named '深色阅读设置'
+    t =    20.55s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testDefaultSpeedAndAppearancePersistAcrossRelaunch]' passed (20.774 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testDraftRecoveryAndSettingsRemainAvailable]' started.
+    t =     0.00s Start Test at 2026-10-24 20:40:05.378
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:89609
+2026-10-24 20:40:05.425 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:05.426 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:05.426 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:06.469 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:40:06.469 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:40:06.473 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.30s             Setting up automation session
+    t =     2.78s             Wait for dev.aireader.local to idle
+    t =     4.17s Tap "newText" Button
+    t =     4.17s     Wait for dev.aireader.local to idle
+    t =     4.17s     Find the "newText" Button
+    t =     4.24s     Check for interrupting elements affecting "newText" Button
+    t =     4.27s     Synthesize event
+    t =     4.57s     Wait for dev.aireader.local to idle
+    t =     5.03s Tap "editorBody" TextView
+    t =     5.03s     Wait for dev.aireader.local to idle
+    t =     5.03s     Find the "editorBody" TextView
+    t =     5.07s     Check for interrupting elements affecting "editorBody" TextView
+    t =     5.10s     Synthesize event
+    t =     5.39s     Wait for dev.aireader.local to idle
+    t =     5.43s Type '書きかけの文章です。' into "editorBody" TextView
+    t =     5.43s     Wait for dev.aireader.local to idle
+    t =     5.82s     Find the "editorBody" TextView
+    t =     5.89s     Check for interrupting elements affecting "editorBody" TextView
+    t =     5.93s     Synthesize event
+    t =     6.30s     Wait for dev.aireader.local to idle
+    t =     6.31s Tap "editor.cancel" Button
+    t =     6.31s     Wait for dev.aireader.local to idle
+    t =     6.31s     Find the "editor.cancel" Button
+    t =     6.37s     Check for interrupting elements affecting "editor.cancel" Button
+    t =     6.40s     Synthesize event
+    t =     6.69s     Wait for dev.aireader.local to idle
+    t =     7.07s Terminate dev.aireader.local:89749
+2026-10-24 20:40:12.461 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:12.461 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:12.462 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     8.14s Open dev.aireader.local
+    t =     8.14s     Launch dev.aireader.local
+2026-10-24 20:40:13.520 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:40:13.520 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:40:13.525 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     8.36s         Setting up automation session
+    t =     9.85s         Wait for dev.aireader.local to idle
+    t =    11.35s Waiting 5.0s for "恢复" Button to exist
+    t =    12.39s     Checking `Expect predicate `existsNoRetry == 1` for object "恢复" Button`
+    t =    12.39s         Checking existence of `"恢复" Button`
+    t =    12.48s Tap "恢复" Button
+    t =    12.48s     Wait for dev.aireader.local to idle
+    t =    12.48s     Find the "恢复" Button
+    t =    12.50s     Check for interrupting elements affecting "恢复" Button
+    t =    12.52s     Synthesize event
+    t =    12.81s     Wait for dev.aireader.local to idle
+    t =    13.22s Find the "editorBody" TextView
+    t =    13.26s Tap "editor.cancel" Button
+    t =    13.26s     Wait for dev.aireader.local to idle
+    t =    13.74s     Find the "editor.cancel" Button
+    t =    13.78s     Check for interrupting elements affecting "editor.cancel" Button
+    t =    13.81s     Synthesize event
+    t =    14.09s     Wait for dev.aireader.local to idle
+    t =    14.49s Tap "设置" Button
+    t =    14.49s     Wait for dev.aireader.local to idle
+    t =    14.49s     Find the "设置" Button
+    t =    14.52s     Check for interrupting elements affecting "gearshape" Button
+    t =    14.54s     Synthesize event
+    t =    14.83s     Wait for dev.aireader.local to idle
+    t =    16.61s Waiting 5.0s for "settings.voice" Button to exist
+    t =    17.65s     Checking `Expect predicate `existsNoRetry == 1` for object "settings.voice" Button`
+    t =    17.66s         Checking existence of `"settings.voice" Button`
+    t =    17.70s Find the Target Application 'dev.aireader.local'
+    t =    17.79s Added attachment named '设置'
+    t =    17.79s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testDraftRecoveryAndSettingsRemainAvailable]' passed (18.015 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testEditorClearUndoRedoAndSave]' started.
+    t =     0.00s Start Test at 2026-10-24 20:40:23.394
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:89823
+2026-10-24 20:40:23.443 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:23.443 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:23.443 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:24.468 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:40:24.468 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:40:24.471 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.29s             Setting up automation session
+    t =     2.77s             Wait for dev.aireader.local to idle
+    t =     4.13s Tap "newText" Button
+    t =     4.13s     Wait for dev.aireader.local to idle
+    t =     4.14s     Find the "newText" Button
+    t =     4.21s     Check for interrupting elements affecting "newText" Button
+    t =     4.23s     Synthesize event
+    t =     4.53s     Wait for dev.aireader.local to idle
+    t =     5.00s Tap "editorBody" TextView
+    t =     5.00s     Wait for dev.aireader.local to idle
+    t =     5.00s     Find the "editorBody" TextView
+    t =     5.06s     Check for interrupting elements affecting "editorBody" TextView
+    t =     5.09s     Synthesize event
+    t =     5.37s     Wait for dev.aireader.local to idle
+    t =     5.42s Type '元に戻せる文章です。' into "editorBody" TextView
+    t =     5.42s     Wait for dev.aireader.local to idle
+    t =     5.80s     Find the "editorBody" TextView
+    t =     5.88s     Check for interrupting elements affecting "editorBody" TextView
+    t =     5.91s     Synthesize event
+    t =     6.27s     Wait for dev.aireader.local to idle
+    t =     6.28s Tap "收起键盘" Button
+    t =     6.28s     Wait for dev.aireader.local to idle
+    t =     6.28s     Find the "收起键盘" Button
+    t =     6.32s     Check for interrupting elements affecting "收起键盘" Button
+    t =     6.35s     Synthesize event
+    t =     6.64s     Wait for dev.aireader.local to idle
+    t =     6.87s Tap "editor.clear" Button
+    t =     6.87s     Wait for dev.aireader.local to idle
+    t =     6.87s     Find the "editor.clear" Button
+    t =     6.91s     Check for interrupting elements affecting "editor.clear" Button
+    t =     6.94s     Synthesize event
+    t =     7.22s     Wait for dev.aireader.local to idle
+    t =     7.49s Tap "清空正文" Button
+    t =     7.49s     Wait for dev.aireader.local to idle
+    t =     7.50s     Find the "清空正文" Button
+    t =     7.54s     Check for interrupting elements affecting "清空正文" Button
+    t =     7.57s     Synthesize event
+    t =     7.86s     Wait for dev.aireader.local to idle
+    t =     8.13s Find the "editorBody" TextView
+    t =     8.16s Find the "saveText" Button
+    t =     8.19s Tap "editor.undo" Button
+    t =     8.19s     Wait for dev.aireader.local to idle
+    t =     8.20s     Find the "editor.undo" Button
+    t =     8.23s     Check for interrupting elements affecting "editor.undo" Button
+    t =     8.26s     Synthesize event
+    t =     8.55s     Wait for dev.aireader.local to idle
+    t =     8.56s Find the "editorBody" TextView
+    t =     8.60s Tap "editor.redo" Button
+    t =     8.60s     Wait for dev.aireader.local to idle
+    t =     8.60s     Find the "editor.redo" Button
+    t =     8.63s     Check for interrupting elements affecting "editor.redo" Button
+    t =     8.66s     Synthesize event
+    t =     8.94s     Wait for dev.aireader.local to idle
+    t =     8.95s Find the "editorBody" TextView
+    t =     8.98s Tap "editor.undo" Button
+    t =     8.98s     Wait for dev.aireader.local to idle
+    t =     8.99s     Find the "editor.undo" Button
+    t =     9.03s     Check for interrupting elements affecting "editor.undo" Button
+    t =     9.06s     Synthesize event
+    t =     9.35s     Wait for dev.aireader.local to idle
+    t =     9.36s Tap "saveText" Button
+    t =     9.36s     Wait for dev.aireader.local to idle
+    t =     9.36s     Find the "saveText" Button
+    t =     9.40s     Check for interrupting elements affecting "saveText" Button
+    t =     9.43s     Synthesize event
+    t =     9.72s     Wait for dev.aireader.local to idle
+    t =    10.12s Waiting 5.0s for "newText" Button to exist
+    t =    11.17s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.17s         Checking existence of `"newText" Button`
+    t =    11.21s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testEditorClearUndoRedoAndSave]' passed (11.433 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testFavoriteTrashAndRestore]' started.
+    t =     0.00s Start Test at 2026-10-24 20:40:34.827
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.02s         Wait for dev.aireader.local to idle
+    t =     0.03s     Open dev.aireader.local
+    t =     0.03s         Launch dev.aireader.local
+    t =     0.03s             Terminate dev.aireader.local:89969
+2026-10-24 20:40:34.864 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:34.864 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:34.864 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:40:35.884 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:40:35.884 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:40:35.887 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.27s             Setting up automation session
+    t =     2.75s             Wait for dev.aireader.local to idle
+    t =     4.14s Waiting 5.0s for "newText" Button to exist
+    t =     5.18s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     5.18s         Checking existence of `"newText" Button`
+    t =     5.25s Tap "newText" Button
+    t =     5.25s     Wait for dev.aireader.local to idle
+    t =     5.25s     Find the "newText" Button
+    t =     5.27s     Check for interrupting elements affecting "newText" Button
+    t =     5.29s     Synthesize event
+    t =     5.59s     Wait for dev.aireader.local to idle
+    t =     6.04s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     7.07s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     7.07s         Checking existence of `"editorTitle" TextField`
+    t =     7.14s Tap "editorTitle" TextField
+    t =     7.14s     Wait for dev.aireader.local to idle
+    t =     7.14s     Find the "editorTitle" TextField
+    t =     7.17s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.19s     Synthesize event
+    t =     7.48s     Wait for dev.aireader.local to idle
+    t =     7.55s Type '日本語の練習' into "editorTitle" TextField
+    t =     7.55s     Wait for dev.aireader.local to idle
+    t =     7.92s     Find the "editorTitle" TextField
+    t =     7.99s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.03s     Synthesize event
+    t =     8.32s     Wait for dev.aireader.local to idle
+    t =     8.33s Tap "editorBody" TextView
+    t =     8.33s     Wait for dev.aireader.local to idle
+    t =     8.33s     Find the "editorBody" TextView
+    t =     8.37s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.40s     Synthesize event
+    t =     8.69s     Wait for dev.aireader.local to idle
+    t =     8.70s Type '新しい言葉を覚えましょう。' into "editorBody" TextView
+    t =     8.70s     Wait for dev.aireader.local to idle
+    t =     8.70s     Find the "editorBody" TextView
+    t =     8.75s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.78s     Synthesize event
+    t =     9.20s     Wait for dev.aireader.local to idle
+    t =     9.20s Tap "收起键盘" Button
+    t =     9.20s     Wait for dev.aireader.local to idle
+    t =     9.21s     Find the "收起键盘" Button
+    t =     9.26s     Check for interrupting elements affecting "收起键盘" Button
+    t =     9.30s     Synthesize event
+    t =     9.58s     Wait for dev.aireader.local to idle
+    t =     9.81s Tap "saveText" Button
+    t =     9.81s     Wait for dev.aireader.local to idle
+    t =     9.82s     Find the "saveText" Button
+    t =     9.86s     Check for interrupting elements affecting "saveText" Button
+    t =     9.89s     Synthesize event
+    t =    10.18s     Wait for dev.aireader.local to idle
+    t =    10.57s Waiting 5.0s for "newText" Button to exist
+    t =    11.60s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.61s         Checking existence of `"newText" Button`
+    t =    11.64s Tap "文件库" Button
+    t =    11.64s     Wait for dev.aireader.local to idle
+    t =    11.64s     Find the "文件库" Button
+    t =    11.67s     Check for interrupting elements affecting "folder" Button
+    t =    11.69s     Synthesize event
+    t =    11.97s     Wait for dev.aireader.local to idle
+    t =    13.80s Tap "日本語の練習 操作" Button
+    t =    13.80s     Wait for dev.aireader.local to idle
+    t =    13.80s     Find the "日本語の練習 操作" Button
+    t =    13.84s     Check for interrupting elements affecting "日本語の練習 操作" Button
+    t =    13.86s     Synthesize event
+    t =    14.15s     Wait for dev.aireader.local to idle
+    t =    15.29s Tap "收藏" Button
+    t =    15.29s     Wait for dev.aireader.local to idle
+    t =    15.29s     Find the "收藏" Button
+    t =    15.32s     Check for interrupting elements affecting "star" Button
+    t =    15.34s     Synthesize event
+    t =    15.62s     Wait for dev.aireader.local to idle
+    t =    17.04s Tap "library.filter.favorites" Button
+    t =    17.04s     Wait for dev.aireader.local to idle
+    t =    17.05s     Find the "library.filter.favorites" Button
+    t =    17.08s     Check for interrupting elements affecting "library.filter.favorites" Button
+    t =    17.10s     Synthesize event
+    t =    17.39s     Wait for dev.aireader.local to idle
+    t =    17.40s Waiting 3.0s for "日本語の練習" StaticText to exist
+    t =    18.45s     Checking `Expect predicate `existsNoRetry == 1` for object "日本語の練習" StaticText`
+    t =    18.45s         Checking existence of `"日本語の練習" StaticText`
+    t =    18.49s Tap "日本語の練習 操作" Button
+    t =    18.49s     Wait for dev.aireader.local to idle
+    t =    18.49s     Find the "日本語の練習 操作" Button
+    t =    18.51s     Check for interrupting elements affecting "日本語の練習 操作" Button
+    t =    18.53s     Synthesize event
+    t =    18.82s     Wait for dev.aireader.local to idle
+    t =    19.91s Tap "移入最近删除" Button
+    t =    19.91s     Wait for dev.aireader.local to idle
+    t =    19.91s     Find the "移入最近删除" Button
+    t =    19.94s     Check for interrupting elements affecting "trash" Button
+    t =    19.96s     Synthesize event
+    t =    20.24s     Wait for dev.aireader.local to idle
+    t =    21.31s Checking existence of `"移入最近删除" Button`
+    t =    21.34s Tap "最近删除" Button
+    t =    21.34s     Wait for dev.aireader.local to idle
+    t =    21.34s     Find the "最近删除" Button
+    t =    21.36s     Check for interrupting elements affecting "trash" Button
+    t =    21.38s     Synthesize event
+    t =    21.67s     Wait for dev.aireader.local to idle
+    t =    21.99s Waiting 5.0s for "日本語の練習" StaticText to exist
+    t =    23.04s     Checking `Expect predicate `existsNoRetry == 1` for object "日本語の練習" StaticText`
+    t =    23.04s         Checking existence of `"日本語の練習" StaticText`
+    t =    23.06s Tap Button (First Match)
+    t =    23.06s     Wait for dev.aireader.local to idle
+    t =    23.06s     Find the Button (First Match)
+    t =    23.08s     Check for interrupting elements affecting "trash.restore.33034C16-540F-4FC2-92E8-4A3B4E697D47" Button
+    t =    23.09s     Synthesize event
+    t =    23.38s     Wait for dev.aireader.local to idle
+    t =    23.38s Waiting 5.0s for "最近删除为空" StaticText to exist
+    t =    24.39s     Checking `Expect predicate `existsNoRetry == 1` for object "最近删除为空" StaticText`
+    t =    24.39s         Checking existence of `"最近删除为空" StaticText`
+    t =    24.40s Tap "trash.back" Button
+    t =    24.40s     Wait for dev.aireader.local to idle
+    t =    24.40s     Find the "trash.back" Button
+    t =    24.41s     Check for interrupting elements affecting "trash.back" Button
+    t =    24.42s     Synthesize event
+    t =    24.71s     Wait for dev.aireader.local to idle
+    t =    25.01s Waiting 5.0s for "日本語の練習" StaticText to exist
+    t =    26.04s     Checking `Expect predicate `existsNoRetry == 1` for object "日本語の練習" StaticText`
+    t =    26.04s         Checking existence of `"日本語の練習" StaticText`
+    t =    26.07s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testFavoriteTrashAndRestore]' passed (26.312 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testFileImportPreservesTXTNameAndDetectsDuplicate]' started.
+    t =     0.00s Start Test at 2026-10-24 20:41:01.140
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.03s     Open dev.aireader.local
+    t =     0.03s         Launch dev.aireader.local
+    t =     0.03s             Terminate dev.aireader.local:90103
+2026-10-24 20:41:01.184 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:01.184 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:01.185 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:02.201 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:41:02.201 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:41:02.205 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.27s             Setting up automation session
+    t =     2.79s             Wait for dev.aireader.local to idle
+    t =     4.18s Open dev.aireader.local with URL file:///Users/rgwei/Library/Developer/CoreSimulator/Devices/2ABE704A-80B9-4A59-9D19-A80CFD48A6BF/data/Containers/Data/Application/1F238EEB-321E-4746-BCD3-E740397863B6/tmp/13CE58C3-F6FC-44EC-BDCF-B4E9FEE433DE/%E4%BA%AC%E9%83%BD%E3%81%AE%E3%83%A1%E3%83%A2.txt
+    t =     4.18s     Launch dev.aireader.local
+2026-10-24 20:41:05.322 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:41:05.322 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:41:05.324 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:05.336 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:05.336 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:05.336 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     4.39s         Setting up automation session
+    t =     5.95s         Wait for dev.aireader.local to idle
+    t =     7.53s Waiting 5.0s for "开始导入" Button to exist
+    t =     8.59s     Checking `Expect predicate `existsNoRetry == 1` for object "开始导入" Button`
+    t =     8.60s         Checking existence of `"开始导入" Button`
+    t =     8.69s Tap "开始导入" Button
+    t =     8.69s     Wait for dev.aireader.local to idle
+    t =     8.69s     Find the "开始导入" Button
+    t =     8.72s     Check for interrupting elements affecting "开始导入" Button
+    t =     8.74s     Synthesize event
+    t =     9.04s     Wait for dev.aireader.local to idle
+    t =     9.05s Waiting 5.0s for "import.confirm" Button to exist
+    t =    10.07s     Checking `Expect predicate `existsNoRetry == 1` for object "import.confirm" Button`
+    t =    10.08s         Checking existence of `"import.confirm" Button`
+    t =    10.12s Tap "import.confirm" Button
+    t =    10.12s     Wait for dev.aireader.local to idle
+    t =    10.12s     Find the "import.confirm" Button
+    t =    10.15s     Check for interrupting elements affecting "import.confirm" Button
+    t =    10.18s     Synthesize event
+    t =    10.46s     Wait for dev.aireader.local to idle
+    t =    10.46s Waiting 5.0s for "import.openImported" Button to exist
+    t =    11.49s     Checking `Expect predicate `existsNoRetry == 1` for object "import.openImported" Button`
+    t =    11.49s         Checking existence of `"import.openImported" Button`
+    t =    11.54s Find the Target Application 'dev.aireader.local'
+    t =    11.61s Added attachment named 'TXT 导入完成'
+    t =    11.61s Tap "完成" Button
+    t =    11.61s     Wait for dev.aireader.local to idle
+    t =    11.62s     Find the "完成" Button
+    t =    11.64s     Check for interrupting elements affecting "完成" Button
+    t =    11.66s     Synthesize event
+    t =    11.94s     Wait for dev.aireader.local to idle
+    t =    12.32s Tap "文件库" Button
+    t =    12.33s     Wait for dev.aireader.local to idle
+    t =    12.34s     Find the "文件库" Button
+    t =    12.36s     Check for interrupting elements affecting "文件库" Button
+    t =    12.38s     Synthesize event
+    t =    12.67s     Wait for dev.aireader.local to idle
+    t =    14.48s Waiting 5.0s for "京都のメモ" StaticText to exist
+    t =    15.51s     Checking `Expect predicate `existsNoRetry == 1` for object "京都のメモ" StaticText`
+    t =    15.51s         Checking existence of `"京都のメモ" StaticText`
+    t =    15.56s Open dev.aireader.local with URL file:///Users/rgwei/Library/Developer/CoreSimulator/Devices/2ABE704A-80B9-4A59-9D19-A80CFD48A6BF/data/Containers/Data/Application/1F238EEB-321E-4746-BCD3-E740397863B6/tmp/13CE58C3-F6FC-44EC-BDCF-B4E9FEE433DE/%E4%BA%AC%E9%83%BD%E3%81%AE%E3%83%A1%E3%83%A2.txt
+    t =    15.56s     Launch dev.aireader.local
+2026-10-24 20:41:16.699 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:41:16.699 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:41:16.702 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:16.715 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:16.715 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:16.715 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    15.76s         Setting up automation session
+    t =    17.31s         Wait for dev.aireader.local to idle
+    t =    18.86s Waiting 5.0s for "开始导入" Button to exist
+    t =    19.87s     Checking `Expect predicate `existsNoRetry == 1` for object "开始导入" Button`
+    t =    19.88s         Checking existence of `"开始导入" Button`
+    t =    19.97s Tap "开始导入" Button
+    t =    19.97s     Wait for dev.aireader.local to idle
+    t =    19.97s     Find the "开始导入" Button
+    t =    19.99s     Check for interrupting elements affecting "开始导入" Button
+    t =    20.02s     Synthesize event
+    t =    20.31s     Wait for dev.aireader.local to idle
+    t =    20.32s Waiting 5.0s for "import.confirm" Button to exist
+    t =    21.35s     Checking `Expect predicate `existsNoRetry == 1` for object "import.confirm" Button`
+    t =    21.35s         Checking existence of `"import.confirm" Button`
+    t =    21.39s Tap "import.confirm" Button
+    t =    21.39s     Wait for dev.aireader.local to idle
+    t =    21.39s     Find the "import.confirm" Button
+    t =    21.42s     Check for interrupting elements affecting "import.confirm" Button
+    t =    21.45s     Synthesize event
+    t =    21.73s     Wait for dev.aireader.local to idle
+    t =    21.73s Waiting 5.0s for "import.openDuplicate" Button to exist
+    t =    22.78s     Checking `Expect predicate `existsNoRetry == 1` for object "import.openDuplicate" Button`
+    t =    22.78s         Checking existence of `"import.openDuplicate" Button`
+    t =    22.82s Find the Target Application 'dev.aireader.local'
+    t =    22.90s Added attachment named '重复文件处理'
+    t =    22.90s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testFileImportPreservesTXTNameAndDetectsDuplicate]' passed (23.129 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testFoldersMoveAndJapaneseBodySearch]' started.
+    t =     0.00s Start Test at 2026-10-24 20:41:24.270
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.03s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:90630
+2026-10-24 20:41:24.316 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:24.317 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:24.317 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:25.349 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:41:25.349 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:41:25.353 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.29s             Setting up automation session
+    t =     2.80s             Wait for dev.aireader.local to idle
+    t =     4.18s Waiting 5.0s for "newText" Button to exist
+    t =     5.21s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     5.22s         Checking existence of `"newText" Button`
+    t =     5.29s Tap "newText" Button
+    t =     5.29s     Wait for dev.aireader.local to idle
+    t =     5.29s     Find the "newText" Button
+    t =     5.31s     Check for interrupting elements affecting "newText" Button
+    t =     5.33s     Synthesize event
+    t =     5.63s     Wait for dev.aireader.local to idle
+    t =     6.09s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     7.13s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     7.13s         Checking existence of `"editorTitle" TextField`
+    t =     7.20s Tap "editorTitle" TextField
+    t =     7.20s     Wait for dev.aireader.local to idle
+    t =     7.20s     Find the "editorTitle" TextField
+    t =     7.23s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.25s     Synthesize event
+    t =     7.54s     Wait for dev.aireader.local to idle
+    t =     7.60s Type '読書のメモ' into "editorTitle" TextField
+    t =     7.60s     Wait for dev.aireader.local to idle
+    t =     7.99s     Find the "editorTitle" TextField
+    t =     8.06s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.09s     Synthesize event
+    t =     8.38s     Wait for dev.aireader.local to idle
+    t =     8.38s Tap "editorBody" TextView
+    t =     8.39s     Wait for dev.aireader.local to idle
+    t =     8.39s     Find the "editorBody" TextView
+    t =     8.44s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.48s     Synthesize event
+    t =     8.76s     Wait for dev.aireader.local to idle
+    t =     8.77s Type '春の京都を歩きます。' into "editorBody" TextView
+    t =     8.77s     Wait for dev.aireader.local to idle
+    t =     8.77s     Find the "editorBody" TextView
+    t =     8.81s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.85s     Synthesize event
+    t =     9.22s     Wait for dev.aireader.local to idle
+    t =     9.22s Tap "收起键盘" Button
+    t =     9.22s     Wait for dev.aireader.local to idle
+    t =     9.23s     Find the "收起键盘" Button
+    t =     9.28s     Check for interrupting elements affecting "收起键盘" Button
+    t =     9.32s     Synthesize event
+    t =     9.60s     Wait for dev.aireader.local to idle
+    t =     9.83s Tap "saveText" Button
+    t =     9.83s     Wait for dev.aireader.local to idle
+    t =     9.84s     Find the "saveText" Button
+    t =     9.88s     Check for interrupting elements affecting "saveText" Button
+    t =     9.91s     Synthesize event
+    t =    10.20s     Wait for dev.aireader.local to idle
+    t =    10.60s Waiting 5.0s for "newText" Button to exist
+    t =    11.63s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.63s         Checking existence of `"newText" Button`
+    t =    11.67s Tap "文件库" Button
+    t =    11.67s     Wait for dev.aireader.local to idle
+    t =    11.67s     Find the "文件库" Button
+    t =    11.69s     Check for interrupting elements affecting "folder" Button
+    t =    11.71s     Synthesize event
+    t =    12.00s     Wait for dev.aireader.local to idle
+    t =    13.80s Tap "library.manageFolders" Button
+    t =    13.80s     Wait for dev.aireader.local to idle
+    t =    13.81s     Find the "library.manageFolders" Button
+    t =    13.85s     Check for interrupting elements affecting "library.manageFolders" Button
+    t =    13.87s     Synthesize event
+    t =    14.16s     Wait for dev.aireader.local to idle
+    t =    14.64s Tap TextField (First Match)
+    t =    14.64s     Wait for dev.aireader.local to idle
+    t =    14.65s     Find the TextField (First Match)
+    t =    14.69s     Check for interrupting elements affecting "文件夹名称" TextField
+    t =    14.73s     Synthesize event
+    t =    15.02s     Wait for dev.aireader.local to idle
+    t =    15.72s Type '日本語' into TextField (First Match)
+    t =    15.72s     Wait for dev.aireader.local to idle
+    t =    15.73s     Find the TextField (First Match)
+    t =    15.77s     Check for interrupting elements affecting "文件夹名称" TextField
+    t =    15.81s     Synthesize event
+    t =    16.06s     Wait for dev.aireader.local to idle
+    t =    16.29s Tap "保存" Button
+    t =    16.29s     Wait for dev.aireader.local to idle
+    t =    16.29s     Find the "保存" Button
+    t =    16.34s     Check for interrupting elements affecting "保存" Button
+    t =    16.38s     Synthesize event
+    t =    16.66s     Wait for dev.aireader.local to idle
+    t =    16.97s Tap "読書のメモ 操作" Button
+    t =    16.97s     Wait for dev.aireader.local to idle
+    t =    16.97s     Find the "読書のメモ 操作" Button
+    t =    16.99s     Check for interrupting elements affecting "読書のメモ 操作" Button
+    t =    17.00s     Synthesize event
+    t =    17.30s     Wait for dev.aireader.local to idle
+    t =    18.42s Tap "移动到" Button
+    t =    18.42s     Wait for dev.aireader.local to idle
+    t =    18.42s     Find the "移动到" Button
+    t =    18.45s     Check for interrupting elements affecting "移动到" Button
+    t =    18.47s     Synthesize event
+    t =    18.77s     Wait for dev.aireader.local to idle
+Resolve Package Graph
+
+    t =    19.89s Tap "日本語" Button
+    t =    19.89s     Wait for dev.aireader.local to idle
+    t =    19.89s     Find the "日本語" Button
+    t =    19.92s     Check for interrupting elements affecting "日本語" Button
+    t =    19.94s     Synthesize event
+    t =    20.21s     Wait for dev.aireader.local to idle
+    t =    21.63s Tap Button (First Match)
+    t =    21.63s     Wait for dev.aireader.local to idle
+    t =    21.63s     Find the Button (First Match)
+    t =    21.67s     Check for interrupting elements affecting "library.folder.1A0AD6A4-8449-4FC8-9788-BCAB0F53C5AF" Button
+    t =    21.68s     Synthesize event
+    t =    21.98s     Wait for dev.aireader.local to idle
+    t =    21.98s Waiting 3.0s for "読書のメモ" StaticText to exist
+    t =    23.01s     Checking `Expect predicate `existsNoRetry == 1` for object "読書のメモ" StaticText`
+    t =    23.01s         Checking existence of `"読書のメモ" StaticText`
+    t =    23.03s Tap "library.search" TextField
+    t =    23.03s     Wait for dev.aireader.local to idle
+    t =    23.04s     Find the "library.search" TextField
+    t =    23.05s     Check for interrupting elements affecting "library.search" TextField
+    t =    23.07s     Synthesize event
+    t =    23.35s     Wait for dev.aireader.local to idle
+    t =    23.64s Type '京都' into "library.search" TextField
+    t =    23.64s     Wait for dev.aireader.local to idle
+    t =    23.64s     Find the "library.search" TextField
+    t =    23.66s     Check for interrupting elements affecting "library.search" TextField
+    t =    23.69s     Synthesize event
+    t =    23.93s     Wait for dev.aireader.local to idle
+    t =    23.93s Waiting 3.0s for "読書のメモ" StaticText to exist
+    t =    24.96s     Checking `Expect predicate `existsNoRetry == 1` for object "読書のメモ" StaticText`
+    t =    24.96s         Checking existence of `"読書のメモ" StaticText`
+    t =    24.99s Tap "清除搜索" Button
+    t =    24.99s     Wait for dev.aireader.local to idle
+    t =    24.99s     Find the "清除搜索" Button
+    t =    25.02s     Check for interrupting elements affecting "xmark.circle.fill" Button
+    t =    25.04s     Synthesize event
+    t =    25.33s     Wait for dev.aireader.local to idle
+    t =    25.34s Tap "library.backToAll" Button
+    t =    25.34s     Wait for dev.aireader.local to idle
+    t =    25.34s     Find the "library.backToAll" Button
+    t =    25.37s     Check for interrupting elements affecting "library.backToAll" Button
+    t =    25.39s     Synthesize event
+    t =    25.68s     Wait for dev.aireader.local to idle
+    t =    25.69s Waiting 3.0s for "library.manageFolders" Button to exist
+    t =    26.73s     Checking `Expect predicate `existsNoRetry == 1` for object "library.manageFolders" Button`
+    t =    26.73s         Checking existence of `"library.manageFolders" Button`
+    t =    26.76s Find the Target Application 'dev.aireader.local'
+    t =    26.84s Added attachment named '文件夹与资料管理'
+    t =    26.84s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testFoldersMoveAndJapaneseBodySearch]' passed (27.080 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testFourNativeVoicePreviewsAndSelectionPersist]' started.
+    t =     0.00s Start Test at 2026-10-24 20:41:51.350
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.02s         Wait for dev.aireader.local to idle
+    t =     0.02s     Open dev.aireader.local
+    t =     0.03s         Launch dev.aireader.local
+    t =     0.03s             Terminate dev.aireader.local:90729
+2026-10-24 20:41:51.386 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:51.386 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:51.386 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:41:52.434 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:41:52.434 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:41:52.438 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.30s             Setting up automation session
+    t =     2.89s             Wait for dev.aireader.local to idle
+    t =     4.27s Tap "设置" Button
+    t =     4.27s     Wait for dev.aireader.local to idle
+    t =     4.27s     Find the "设置" Button
+    t =     4.34s     Check for interrupting elements affecting "设置" Button
+    t =     4.36s     Synthesize event
+    t =     4.66s     Wait for dev.aireader.local to idle
+    t =     6.47s Tap "settings.voice" Button
+    t =     6.47s     Wait for dev.aireader.local to idle
+    t =     6.48s     Find the "settings.voice" Button
+    t =     6.52s     Check for interrupting elements affecting "settings.voice" Button
+    t =     6.54s     Synthesize event
+    t =     6.83s     Wait for dev.aireader.local to idle
+    t =     7.19s Find the "voice.select.0" Button
+    t =     7.25s Waiting 5.0s for "voice.select.0" Button to exist
+    t =     8.31s     Checking `Expect predicate `existsNoRetry == 1` for object "voice.select.0" Button`
+    t =     8.32s         Checking existence of `"voice.select.0" Button`
+    t =     8.36s Tap "voice.select.0" Button
+    t =     8.36s     Wait for dev.aireader.local to idle
+    t =     8.36s     Find the "voice.select.0" Button
+    t =     8.39s     Check for interrupting elements affecting "voice.select.0" Button
+    t =     8.41s     Synthesize event
+    t =     8.70s     Wait for dev.aireader.local to idle
+    t =     8.70s Tap "voice.preview.0" Button
+    t =     8.70s     Wait for dev.aireader.local to idle
+    t =     8.71s     Find the "voice.preview.0" Button
+    t =     8.73s     Check for interrupting elements affecting "voice.preview.0" Button
+    t =     8.76s     Synthesize event
+    t =     9.05s     Wait for dev.aireader.local to idle
+    t =     9.05s Find the "voice.status" StaticText
+    t =    10.15s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "voice.status" StaticText`
+    t =    10.15s     Find the "voice.status" StaticText
+    t =    10.18s Tap "voice.stop" Button
+    t =    10.18s     Wait for dev.aireader.local to idle
+    t =    10.18s     Find the "voice.stop" Button
+    t =    10.20s     Check for interrupting elements affecting "voice.stop" Button
+    t =    10.23s     Synthesize event
+    t =    10.52s     Wait for dev.aireader.local to idle
+    t =    10.77s Find the Target Application 'dev.aireader.local'
+    t =    10.84s Added attachment named '音色试听-0'
+    t =    10.84s Swipe down Target Application 'dev.aireader.local'
+    t =    10.84s     Wait for dev.aireader.local to idle
+    t =    10.85s     Find the Target Application 'dev.aireader.local'
+    t =    10.86s     Check for interrupting elements affecting "AI Reader" Application
+    t =    10.88s     Synthesize event
+    t =    11.30s     Wait for dev.aireader.local to idle
+    t =    11.79s Find the "voice.select.8" Button
+    t =    11.83s Waiting 5.0s for "voice.select.8" Button to exist
+    t =    12.86s     Checking `Expect predicate `existsNoRetry == 1` for object "voice.select.8" Button`
+    t =    12.87s         Checking existence of `"voice.select.8" Button`
+    t =    12.91s Tap "voice.select.8" Button
+    t =    12.91s     Wait for dev.aireader.local to idle
+    t =    13.03s     Find the "voice.select.8" Button
+    t =    13.06s     Check for interrupting elements affecting "voice.select.8" Button
+    t =    13.09s     Synthesize event
+    t =    13.39s     Wait for dev.aireader.local to idle
+    t =    13.39s Tap "voice.preview.8" Button
+    t =    13.39s     Wait for dev.aireader.local to idle
+    t =    13.40s     Find the "voice.preview.8" Button
+    t =    13.43s     Check for interrupting elements affecting "voice.preview.8" Button
+    t =    13.46s     Synthesize event
+    t =    13.75s     Wait for dev.aireader.local to idle
+    t =    13.75s Find the "voice.status" StaticText
+    t =    14.83s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "voice.status" StaticText`
+    t =    14.83s     Find the "voice.status" StaticText
+    t =    14.86s Tap "voice.stop" Button
+    t =    14.86s     Wait for dev.aireader.local to idle
+    t =    14.86s     Find the "voice.stop" Button
+    t =    14.89s     Check for interrupting elements affecting "voice.stop" Button
+    t =    14.91s     Synthesize event
+    t =    15.20s     Wait for dev.aireader.local to idle
+    t =    15.45s Find the Target Application 'dev.aireader.local'
+    t =    15.56s Added attachment named '音色试听-8'
+    t =    15.56s Swipe down Target Application 'dev.aireader.local'
+    t =    15.56s     Wait for dev.aireader.local to idle
+    t =    15.56s     Find the Target Application 'dev.aireader.local'
+    t =    15.57s     Check for interrupting elements affecting "AI Reader" Application
+    t =    15.59s     Synthesize event
+    t =    16.02s     Wait for dev.aireader.local to idle
+    t =    16.50s Find the "voice.select.14" Button
+    t =    16.55s Waiting 5.0s for "voice.select.14" Button to exist
+    t =    17.60s     Checking `Expect predicate `existsNoRetry == 1` for object "voice.select.14" Button`
+    t =    17.60s         Checking existence of `"voice.select.14" Button`
+    t =    17.64s Tap "voice.select.14" Button
+    t =    17.64s     Wait for dev.aireader.local to idle
+    t =    17.75s     Find the "voice.select.14" Button
+    t =    17.79s     Check for interrupting elements affecting "voice.select.14" Button
+    t =    17.82s     Synthesize event
+    t =    18.11s     Wait for dev.aireader.local to idle
+    t =    18.11s Tap "voice.preview.14" Button
+    t =    18.11s     Wait for dev.aireader.local to idle
+    t =    18.12s     Find the "voice.preview.14" Button
+    t =    18.15s     Check for interrupting elements affecting "voice.preview.14" Button
+    t =    18.18s     Synthesize event
+    t =    18.47s     Wait for dev.aireader.local to idle
+    t =    18.47s Find the "voice.status" StaticText
+    t =    19.53s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "voice.status" StaticText`
+    t =    19.53s     Find the "voice.status" StaticText
+    t =    19.56s Tap "voice.stop" Button
+    t =    19.56s     Wait for dev.aireader.local to idle
+    t =    19.56s     Find the "voice.stop" Button
+    t =    19.58s     Check for interrupting elements affecting "voice.stop" Button
+    t =    19.61s     Synthesize event
+    t =    19.89s     Wait for dev.aireader.local to idle
+    t =    20.15s Find the Target Application 'dev.aireader.local'
+    t =    20.23s Added attachment named '音色试听-14'
+    t =    20.23s Swipe down Target Application 'dev.aireader.local'
+    t =    20.23s     Wait for dev.aireader.local to idle
+    t =    20.23s     Find the Target Application 'dev.aireader.local'
+    t =    20.25s     Check for interrupting elements affecting "AI Reader" Application
+    t =    20.27s     Synthesize event
+    t =    20.69s     Wait for dev.aireader.local to idle
+    t =    21.19s Find the "voice.select.24" Button
+    t =    21.23s Waiting 5.0s for "voice.select.24" Button to exist
+    t =    22.25s     Checking `Expect predicate `existsNoRetry == 1` for object "voice.select.24" Button`
+    t =    22.25s         Checking existence of `"voice.select.24" Button`
+    t =    22.29s Tap "voice.select.24" Button
+    t =    22.29s     Wait for dev.aireader.local to idle
+    t =    22.43s     Find the "voice.select.24" Button
+    t =    22.46s     Check for interrupting elements affecting "voice.select.24" Button
+    t =    22.48s     Synthesize event
+    t =    22.77s     Wait for dev.aireader.local to idle
+    t =    22.78s Tap "voice.preview.24" Button
+    t =    22.78s     Wait for dev.aireader.local to idle
+    t =    22.78s     Find the "voice.preview.24" Button
+    t =    22.83s     Check for interrupting elements affecting "voice.preview.24" Button
+    t =    22.86s     Synthesize event
+    t =    23.15s     Wait for dev.aireader.local to idle
+    t =    23.15s Find the "voice.status" StaticText
+    t =    24.22s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "voice.status" StaticText`
+    t =    24.22s     Find the "voice.status" StaticText
+    t =    24.24s Tap "voice.stop" Button
+    t =    24.24s     Wait for dev.aireader.local to idle
+    t =    24.25s     Find the "voice.stop" Button
+    t =    24.27s     Check for interrupting elements affecting "voice.stop" Button
+    t =    24.30s     Synthesize event
+    t =    24.58s     Wait for dev.aireader.local to idle
+    t =    24.84s Find the Target Application 'dev.aireader.local'
+    t =    24.91s Added attachment named '音色试听-24'
+    t =    24.91s Swipe down Target Application 'dev.aireader.local'
+    t =    24.91s     Wait for dev.aireader.local to idle
+    t =    24.91s     Find the Target Application 'dev.aireader.local'
+    t =    24.93s     Check for interrupting elements affecting "AI Reader" Application
+    t =    24.95s     Synthesize event
+    t =    25.37s     Wait for dev.aireader.local to idle
+    t =    25.85s Terminate dev.aireader.local:91132
+2026-10-24 20:42:17.225 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:17.225 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:17.226 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    26.92s Open dev.aireader.local
+    t =    26.92s     Launch dev.aireader.local
+2026-10-24 20:42:18.270 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:42:18.270 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:42:18.274 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =    27.13s         Setting up automation session
+    t =    28.65s         Wait for dev.aireader.local to idle
+    t =    30.03s Tap "设置" Button
+    t =    30.03s     Wait for dev.aireader.local to idle
+    t =    30.03s     Find the "设置" Button
+    t =    30.11s     Check for interrupting elements affecting "设置" Button
+    t =    30.13s     Synthesize event
+    t =    30.43s     Wait for dev.aireader.local to idle
+    t =    32.24s Tap "settings.voice" Button
+    t =    32.24s     Wait for dev.aireader.local to idle
+    t =    32.24s     Find the "settings.voice" Button
+    t =    32.29s     Check for interrupting elements affecting "settings.voice" Button
+    t =    32.31s     Synthesize event
+    t =    32.60s     Wait for dev.aireader.local to idle
+    t =    32.97s Find the "voice.select.24" Button
+    t =    33.03s Waiting 5.0s for "voice.select.24" Button to exist
+    t =    34.06s     Checking `Expect predicate `existsNoRetry == 1` for object "voice.select.24" Button`
+    t =    34.06s         Checking existence of `"voice.select.24" Button`
+    t =    34.10s Find the "voice.select.24" Button
+    t =    34.13s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testFourNativeVoicePreviewsAndSelectionPersist]' passed (34.373 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testLandscapeReaderKeepsControlsAvailable]' started.
+    t =     0.00s Start Test at 2026-10-24 20:42:25.724
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:91440
+2026-10-24 20:42:25.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:25.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:25.772 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:26.797 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:42:26.797 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:42:26.801 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.29s             Setting up automation session
+    t =     2.78s             Wait for dev.aireader.local to idle
+    t =     4.17s Waiting 5.0s for "newText" Button to exist
+    t =     5.19s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     5.19s         Checking existence of `"newText" Button`
+    t =     5.27s Tap "newText" Button
+    t =     5.27s     Wait for dev.aireader.local to idle
+    t =     5.27s     Find the "newText" Button
+    t =     5.29s     Check for interrupting elements affecting "newText" Button
+    t =     5.30s     Synthesize event
+    t =     5.59s     Wait for dev.aireader.local to idle
+    t =     6.06s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     7.09s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     7.09s         Checking existence of `"editorTitle" TextField`
+    t =     7.16s Tap "editorTitle" TextField
+    t =     7.16s     Wait for dev.aireader.local to idle
+    t =     7.16s     Find the "editorTitle" TextField
+    t =     7.19s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.21s     Synthesize event
+    t =     7.50s     Wait for dev.aireader.local to idle
+    t =     7.56s Type '横向きの読書' into "editorTitle" TextField
+    t =     7.56s     Wait for dev.aireader.local to idle
+    t =     7.95s     Find the "editorTitle" TextField
+    t =     8.03s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.06s     Synthesize event
+    t =     8.37s     Wait for dev.aireader.local to idle
+    t =     8.37s Tap "editorBody" TextView
+    t =     8.37s     Wait for dev.aireader.local to idle
+    t =     8.37s     Find the "editorBody" TextView
+    t =     8.41s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.44s     Synthesize event
+    t =     8.72s     Wait for dev.aireader.local to idle
+    t =     8.73s Type '静かな午後に本を読みます。
+自分のペ...' into "editorBody" TextView
+    t =     8.73s     Wait for dev.aireader.local to idle
+    t =     8.73s     Find the "editorBody" TextView
+    t =     8.77s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.81s     Synthesize event
+    t =     9.51s     Wait for dev.aireader.local to idle
+    t =     9.52s Tap "收起键盘" Button
+    t =     9.52s     Wait for dev.aireader.local to idle
+    t =     9.52s     Find the "收起键盘" Button
+    t =     9.58s     Check for interrupting elements affecting "收起键盘" Button
+    t =     9.62s     Synthesize event
+    t =     9.91s     Wait for dev.aireader.local to idle
+    t =    10.13s Tap "saveText" Button
+    t =    10.13s     Wait for dev.aireader.local to idle
+    t =    10.14s     Find the "saveText" Button
+    t =    10.18s     Check for interrupting elements affecting "saveText" Button
+    t =    10.21s     Synthesize event
+    t =    10.49s     Wait for dev.aireader.local to idle
+    t =    10.88s Waiting 5.0s for "newText" Button to exist
+    t =    11.92s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.93s         Checking existence of `"newText" Button`
+    t =    11.96s Tap "文件库" Button
+    t =    11.96s     Wait for dev.aireader.local to idle
+    t =    11.96s     Find the "文件库" Button
+    t =    11.98s     Check for interrupting elements affecting "folder" Button
+    t =    12.00s     Synthesize event
+    t =    12.28s     Wait for dev.aireader.local to idle
+    t =    14.12s Tap Button (First Match)
+    t =    14.12s     Wait for dev.aireader.local to idle
+    t =    14.12s     Find the Button (First Match)
+    t =    14.18s     Check for interrupting elements affecting "横向きの読書、文本 · 日本語 · 2026年10月24日" Button
+    t =    14.20s     Synthesize event
+    t =    14.49s     Wait for dev.aireader.local to idle
+    t =    14.84s Setting device orientation to Landscape Left
+    t =    14.85s     Device orientation changed to Landscape Left
+    t =    14.88s     Interface orientation changed to Landscape Right
+    t =    14.88s     Wait for dev.aireader.local to idle
+    t =    15.95s Find the Window (First Match)
+    t =    15.96s Checking existence of `"reader.back" Button`
+    t =    15.98s Checking existence of `"reader.play" Button`
+    t =    15.99s Find the "reader.back" Button
+    t =    16.01s Find the "reader.play" Button
+    t =    16.02s Find the "reader.play" Button
+    t =    16.03s Waiting 5.0s for "reader.back" Button to exist
+    t =    17.07s     Checking `Expect predicate `existsNoRetry == 1` for object "reader.back" Button`
+    t =    17.08s         Checking existence of `"reader.back" Button`
+    t =    17.10s Find the "reader.back" Button
+    t =    17.12s Checking existence of `"reader.play" Button`
+    t =    17.19s Added attachment named '横屏阅读器'
+    t =    17.19s Tap "reader.back" Button
+    t =    17.19s     Wait for dev.aireader.local to idle
+    t =    17.19s     Find the "reader.back" Button
+    t =    17.20s     Check for interrupting elements affecting "reader.back" Button
+    t =    17.21s     Synthesize event
+    t =    17.50s     Wait for dev.aireader.local to idle
+    t =    17.85s Waiting 5.0s for "文件库" Button to exist
+    t =    18.86s     Checking `Expect predicate `existsNoRetry == 1` for object "文件库" Button`
+    t =    18.86s         Checking existence of `"文件库" Button`
+    t =    18.89s Setting device orientation to Portrait
+    t =    18.89s     Device orientation changed to Portrait
+    t =    18.92s     Interface orientation changed to Portrait
+    t =    18.92s     Wait for dev.aireader.local to idle
+    t =    18.95s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testLandscapeReaderKeepsControlsAvailable]' passed (19.194 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testNativeReadingPauseSkipBackgroundAndEditCancellation]' started.
+    t =     0.00s Start Test at 2026-10-24 20:42:44.918
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.08s     Open dev.aireader.local
+    t =     0.08s         Launch dev.aireader.local
+    t =     0.08s             Terminate dev.aireader.local:91542
+2026-10-24 20:42:45.011 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:45.011 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:45.011 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:42:46.069 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:42:46.069 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:42:46.073 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.36s             Setting up automation session
+    t =     2.88s             Wait for dev.aireader.local to idle
+    t =     4.25s Waiting 5.0s for "newText" Button to exist
+    t =     5.30s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     5.30s         Checking existence of `"newText" Button`
+    t =     5.37s Tap "newText" Button
+    t =     5.37s     Wait for dev.aireader.local to idle
+    t =     5.38s     Find the "newText" Button
+    t =     5.39s     Check for interrupting elements affecting "newText" Button
+    t =     5.41s     Synthesize event
+    t =     5.71s     Wait for dev.aireader.local to idle
+    t =     6.18s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     7.21s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     7.21s         Checking existence of `"editorTitle" TextField`
+    t =     7.25s Tap "editorTitle" TextField
+    t =     7.25s     Wait for dev.aireader.local to idle
+    t =     7.25s     Find the "editorTitle" TextField
+    t =     7.28s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.31s     Synthesize event
+    t =     7.59s     Wait for dev.aireader.local to idle
+    t =     7.66s Type 'オフライン朗読' into "editorTitle" TextField
+    t =     7.66s     Wait for dev.aireader.local to idle
+    t =     8.04s     Find the "editorTitle" TextField
+    t =     8.12s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.15s     Synthesize event
+    t =     8.47s     Wait for dev.aireader.local to idle
+    t =     8.48s Tap "editorBody" TextView
+    t =     8.48s     Wait for dev.aireader.local to idle
+    t =     8.48s     Find the "editorBody" TextView
+    t =     8.54s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.57s     Synthesize event
+    t =     8.85s     Wait for dev.aireader.local to idle
+    t =     8.86s Type '京都の朝は静かです。今日は日本語の本...' into "editorBody" TextView
+    t =     8.86s     Wait for dev.aireader.local to idle
+    t =     8.86s     Find the "editorBody" TextView
+    t =     8.90s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.93s     Synthesize event
+    t =    10.02s     Wait for dev.aireader.local to idle
+    t =    10.02s Tap "收起键盘" Button
+    t =    10.02s     Wait for dev.aireader.local to idle
+    t =    10.03s     Find the "收起键盘" Button
+    t =    10.08s     Check for interrupting elements affecting "收起键盘" Button
+    t =    10.12s     Synthesize event
+    t =    10.40s     Wait for dev.aireader.local to idle
+    t =    10.64s Tap "saveText" Button
+    t =    10.64s     Wait for dev.aireader.local to idle
+    t =    10.64s     Find the "saveText" Button
+    t =    10.68s     Check for interrupting elements affecting "saveText" Button
+    t =    10.71s     Synthesize event
+    t =    11.00s     Wait for dev.aireader.local to idle
+    t =    11.39s Waiting 5.0s for "newText" Button to exist
+    t =    12.43s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    12.43s         Checking existence of `"newText" Button`
+    t =    12.47s Tap "文件库" Button
+    t =    12.47s     Wait for dev.aireader.local to idle
+    t =    12.47s     Find the "文件库" Button
+    t =    12.49s     Check for interrupting elements affecting "folder" Button
+    t =    12.51s     Synthesize event
+    t =    12.80s     Wait for dev.aireader.local to idle
+    t =    14.62s Tap Button (First Match)
+    t =    14.62s     Wait for dev.aireader.local to idle
+    t =    14.63s     Find the Button (First Match)
+    t =    14.69s     Check for interrupting elements affecting "オフライン朗読、文本 · 日本語 · 2026年10月24日" Button
+    t =    14.70s     Synthesize event
+    t =    14.99s     Wait for dev.aireader.local to idle
+    t =    15.35s Waiting 5.0s for "reader.play" Button to exist
+    t =    16.38s     Checking `Expect predicate `existsNoRetry == 1` for object "reader.play" Button`
+    t =    16.38s         Checking existence of `"reader.play" Button`
+    t =    16.41s Tap "reader.play" Button
+    t =    16.41s     Wait for dev.aireader.local to idle
+    t =    16.41s     Find the "reader.play" Button
+    t =    16.43s     Check for interrupting elements affecting "reader.play" Button
+    t =    16.45s     Synthesize event
+    t =    16.74s     Wait for dev.aireader.local to idle
+    t =    17.78s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "reader.speechStatus" StaticText`
+    t =    17.78s     Find the "reader.speechStatus" StaticText
+    t =    17.79s     Capturing element debug description
+    t =    17.86s         Requesting snapshot of accessibility hierarchy for app with pid 91776
+    t =    17.87s         Find: Descendants matching type StaticText
+    t =    17.87s         Find: Elements matching predicate '"reader.speechStatus" IN identifiers'
+    t =    17.88s         Requesting snapshot of accessibility hierarchy for app with pid 91776
+    t =    17.89s         Find: Descendants matching type StaticText
+    t =    17.89s         Requesting snapshot of accessibility hierarchy for app with pid 91776
+    t =    18.83s Checking `Expect predicate `label BEGINSWITH "正在朗读"` for object "reader.speechStatus" StaticText`
+    t =    18.83s     Find the "reader.speechStatus" StaticText
+    t =    18.85s Find the Target Application 'dev.aireader.local'
+    t =    18.92s Added attachment named '原生日语朗读'
+    t =    18.92s Tap "reader.play" Button
+    t =    18.92s     Wait for dev.aireader.local to idle
+    t =    18.92s     Find the "reader.play" Button
+    t =    18.93s     Check for interrupting elements affecting "reader.play" Button
+    t =    18.94s     Synthesize event
+    t =    19.23s     Wait for dev.aireader.local to idle
+    t =    19.24s Find the "reader.speechStatus" StaticText
+    t =    19.25s Tap "reader.play" Button
+    t =    19.25s     Wait for dev.aireader.local to idle
+    t =    19.25s     Find the "reader.play" Button
+    t =    19.27s     Check for interrupting elements affecting "reader.play" Button
+    t =    19.28s     Synthesize event
+    t =    19.57s     Wait for dev.aireader.local to idle
+    t =    19.57s Tap "reader.next" Button
+    t =    19.57s     Wait for dev.aireader.local to idle
+    t =    19.57s     Find the "reader.next" Button
+    t =    19.59s     Check for interrupting elements affecting "reader.next" Button
+    t =    19.60s     Synthesize event
+    t =    19.88s     Wait for dev.aireader.local to idle
+    t =    19.89s Tap "reader.back" Button
+    t =    19.89s     Wait for dev.aireader.local to idle
+    t =    19.89s     Find the "reader.back" Button
+    t =    19.90s     Check for interrupting elements affecting "reader.back" Button
+    t =    19.91s     Synthesize event
+    t =    20.20s     Wait for dev.aireader.local to idle
+    t =    20.50s Waiting 5.0s for "miniplayer.toggle" Button to exist
+    t =    21.53s     Checking `Expect predicate `existsNoRetry == 1` for object "miniplayer.toggle" Button`
+    t =    21.53s         Checking existence of `"miniplayer.toggle" Button`
+    t =    21.57s Pressing Home button
+    t =    22.03s Open dev.aireader.local
+    t =    22.03s     Activate dev.aireader.local
+    t =    22.55s         Wait for dev.aireader.local to idle
+    t =    22.71s Waiting 5.0s for "miniplayer.stop" Button to exist
+    t =    23.75s     Checking `Expect predicate `existsNoRetry == 1` for object "miniplayer.stop" Button`
+    t =    23.75s         Checking existence of `"miniplayer.stop" Button`
+    t =    23.77s Tap "miniplayer.stop" Button
+    t =    23.77s     Wait for dev.aireader.local to idle
+    t =    23.77s     Find the "miniplayer.stop" Button
+    t =    23.79s     Check for interrupting elements affecting "miniplayer.stop" Button
+    t =    23.81s     Synthesize event
+    t =    24.10s     Wait for dev.aireader.local to idle
+    t =    24.10s Checking existence of `"miniplayer.stop" Button`
+    t =    24.13s Tap Button (First Match)
+    t =    24.13s     Wait for dev.aireader.local to idle
+    t =    24.14s     Find the Button (First Match)
+    t =    24.18s     Check for interrupting elements affecting "オフライン朗読、文本 · 日本語 · 2026年10月24日、阅读进度 50%" Button
+    t =    24.19s     Synthesize event
+    t =    24.48s     Wait for dev.aireader.local to idle
+    t =    24.80s Tap "reader.play" Button
+    t =    24.80s     Wait for dev.aireader.local to idle
+    t =    24.80s     Find the "reader.play" Button
+    t =    24.82s     Check for interrupting elements affecting "reader.play" Button
+    t =    24.84s     Synthesize event
+    t =    25.13s     Wait for dev.aireader.local to idle
+    t =    25.13s Tap "更多操作" Button
+    t =    25.13s     Wait for dev.aireader.local to idle
+    t =    25.14s     Find the "更多操作" Button
+    t =    25.16s     Check for interrupting elements affecting "更多操作" Button
+    t =    25.17s     Synthesize event
+    t =    25.47s     Wait for dev.aireader.local to idle
+    t =    26.60s Tap "编辑文本" Button
+    t =    26.60s     Wait for dev.aireader.local to idle
+    t =    26.61s     Find the "编辑文本" Button
+    t =    26.64s     Check for interrupting elements affecting "pencil" Button
+    t =    26.65s     Synthesize event
+    t =    26.95s     Wait for dev.aireader.local to idle
+Resolve Package Graph
+
+    t =    28.37s Waiting 5.0s for "editorBody" TextView to exist
+    t =    29.41s     Checking `Expect predicate `existsNoRetry == 1` for object "editorBody" TextView`
+    t =    29.41s         Checking existence of `"editorBody" TextView`
+    t =    29.45s Tap "editor.cancel" Button
+    t =    29.45s     Wait for dev.aireader.local to idle
+    t =    29.46s     Find the "editor.cancel" Button
+    t =    29.48s     Check for interrupting elements affecting "editor.cancel" Button
+    t =    29.50s     Synthesize event
+    t =    29.79s     Wait for dev.aireader.local to idle
+    t =    30.17s Checking existence of `"reader.stop" Button`
+    t =    30.19s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testNativeReadingPauseSkipBackgroundAndEditCancellation]' passed (30.500 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testPDFImportOriginalAndExtractedTextModes]' started.
+    t =     0.00s Start Test at 2026-10-24 20:43:15.419
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:91776
+2026-10-24 20:43:15.468 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:15.469 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:15.469 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:16.502 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:43:16.502 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:43:16.505 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.30s             Setting up automation session
+    t =     2.80s             Wait for dev.aireader.local to idle
+    t =     4.21s Open dev.aireader.local with URL file:///Users/rgwei/Library/Developer/CoreSimulator/Devices/2ABE704A-80B9-4A59-9D19-A80CFD48A6BF/data/Containers/Data/Application/1F238EEB-321E-4746-BCD3-E740397863B6/tmp/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%81%AE%E8%AA%AD%E6%9B%B8.pdf
+    t =     4.21s     Launch dev.aireader.local
+2026-10-24 20:43:19.629 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:43:19.629 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:43:19.634 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:19.651 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:19.651 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:19.652 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     4.42s         Setting up automation session
+    t =     5.98s         Wait for dev.aireader.local to idle
+    t =     7.55s Waiting 5.0s for "开始导入" Button to exist
+    t =     8.57s     Checking `Expect predicate `existsNoRetry == 1` for object "开始导入" Button`
+    t =     8.57s         Checking existence of `"开始导入" Button`
+    t =     8.66s Tap "开始导入" Button
+    t =     8.66s     Wait for dev.aireader.local to idle
+    t =     8.67s     Find the "开始导入" Button
+    t =     8.69s     Check for interrupting elements affecting "开始导入" Button
+    t =     8.71s     Synthesize event
+    t =     9.02s     Wait for dev.aireader.local to idle
+    t =     9.02s Waiting 5.0s for "import.confirm" Button to exist
+    t =    10.06s     Checking `Expect predicate `existsNoRetry == 1` for object "import.confirm" Button`
+    t =    10.06s         Checking existence of `"import.confirm" Button`
+    t =    10.11s Tap "import.confirm" Button
+    t =    10.11s     Wait for dev.aireader.local to idle
+    t =    10.11s     Find the "import.confirm" Button
+    t =    10.14s     Check for interrupting elements affecting "import.confirm" Button
+    t =    10.16s     Synthesize event
+    t =    10.45s     Wait for dev.aireader.local to idle
+    t =    10.46s Waiting 5.0s for "import.openImported" Button to exist
+    t =    11.50s     Checking `Expect predicate `existsNoRetry == 1` for object "import.openImported" Button`
+    t =    11.50s         Checking existence of `"import.openImported" Button`
+    t =    11.54s Tap "import.openImported" Button
+    t =    11.54s     Wait for dev.aireader.local to idle
+    t =    11.54s     Find the "import.openImported" Button
+    t =    11.57s     Check for interrupting elements affecting "import.openImported" Button
+    t =    11.60s     Synthesize event
+    t =    11.89s     Wait for dev.aireader.local to idle
+    t =    12.28s Waiting 5.0s for "原文" Button to exist
+    t =    13.31s     Checking `Expect predicate `existsNoRetry == 1` for object "原文" Button`
+    t =    13.31s         Checking existence of `"原文" Button`
+    t =    13.37s Tap "原文" Button
+    t =    13.37s     Wait for dev.aireader.local to idle
+    t =    13.38s     Find the "原文" Button
+    t =    13.41s     Check for interrupting elements affecting "原文" Button
+    t =    13.43s     Synthesize event
+    t =    13.72s     Wait for dev.aireader.local to idle
+    t =    15.36s Waiting 5.0s for "页" TextField to exist
+    t =    16.40s     Checking `Expect predicate `existsNoRetry == 1` for object "页" TextField`
+    t =    16.40s         Checking existence of `"页" TextField`
+    t =    16.47s Find the Target Application 'dev.aireader.local'
+    t =    16.56s Added attachment named 'PDF 原文阅读'
+    t =    16.56s Tap "文本" Button
+    t =    16.56s     Wait for dev.aireader.local to idle
+    t =    16.56s     Find the "文本" Button
+    t =    16.60s     Check for interrupting elements affecting "文本" Button
+    t =    16.62s     Synthesize event
+    t =    16.91s     Wait for dev.aireader.local to idle
+    t =    18.51s Waiting 5.0s for "reader.text" StaticText to exist
+    t =    19.53s     Checking `Expect predicate `existsNoRetry == 1` for object "reader.text" StaticText`
+    t =    19.53s         Checking existence of `"reader.text" StaticText`
+    t =    19.56s Find the "reader.play" Button
+    t =    19.59s Find the Target Application 'dev.aireader.local'
+    t =    19.67s Added attachment named 'PDF 文本阅读'
+    t =    19.67s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testPDFImportOriginalAndExtractedTextModes]' passed (19.917 seconds).
+Test Case '-[AIReaderUITests.AIReaderUITests testStorageCacheAndConfirmedReset]' started.
+    t =     0.00s Start Test at 2026-10-24 20:43:35.337
+    t =     0.02s Set Up
+    t =     0.02s     Setting device orientation to Portrait
+    t =     0.03s         Wait for dev.aireader.local to idle
+    t =     0.04s     Open dev.aireader.local
+    t =     0.04s         Launch dev.aireader.local
+    t =     0.04s             Terminate dev.aireader.local:92205
+2026-10-24 20:43:35.388 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:35.388 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:35.389 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:43:36.418 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: debugger version lookup failed for path '<nil>': noURL
+2026-10-24 20:43:36.418 xcodebuild[88791:42111185] [MT] IDELaunchParametersSnapshot: no debugger version
+2026-10-24 20:43:36.421 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+    t =     1.29s             Setting up automation session
+    t =     2.81s             Wait for dev.aireader.local to idle
+    t =     4.18s Waiting 5.0s for "newText" Button to exist
+    t =     5.20s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =     5.20s         Checking existence of `"newText" Button`
+    t =     5.27s Tap "newText" Button
+    t =     5.27s     Wait for dev.aireader.local to idle
+    t =     5.27s     Find the "newText" Button
+    t =     5.29s     Check for interrupting elements affecting "newText" Button
+    t =     5.31s     Synthesize event
+    t =     5.61s     Wait for dev.aireader.local to idle
+    t =     6.08s Waiting 3.0s for "editorTitle" TextField to exist
+    t =     7.11s     Checking `Expect predicate `existsNoRetry == 1` for object "editorTitle" TextField`
+    t =     7.11s         Checking existence of `"editorTitle" TextField`
+    t =     7.18s Tap "editorTitle" TextField
+    t =     7.18s     Wait for dev.aireader.local to idle
+    t =     7.18s     Find the "editorTitle" TextField
+    t =     7.21s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     7.23s     Synthesize event
+    t =     7.52s     Wait for dev.aireader.local to idle
+    t =     7.58s Type '消去の確認' into "editorTitle" TextField
+    t =     7.58s     Wait for dev.aireader.local to idle
+    t =     7.96s     Find the "editorTitle" TextField
+    t =     8.03s     Check for interrupting elements affecting "editorTitle" TextField
+    t =     8.06s     Synthesize event
+    t =     8.35s     Wait for dev.aireader.local to idle
+    t =     8.35s Tap "editorBody" TextView
+    t =     8.35s     Wait for dev.aireader.local to idle
+    t =     8.36s     Find the "editorBody" TextView
+    t =     8.41s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.44s     Synthesize event
+    t =     8.73s     Wait for dev.aireader.local to idle
+    t =     8.74s Type 'この資料はテスト専用です。' into "editorBody" TextView
+    t =     8.74s     Wait for dev.aireader.local to idle
+    t =     8.74s     Find the "editorBody" TextView
+    t =     8.78s     Check for interrupting elements affecting "editorBody" TextView
+    t =     8.82s     Synthesize event
+    t =     9.24s     Wait for dev.aireader.local to idle
+    t =     9.24s Tap "收起键盘" Button
+    t =     9.24s     Wait for dev.aireader.local to idle
+    t =     9.25s     Find the "收起键盘" Button
+    t =     9.30s     Check for interrupting elements affecting "收起键盘" Button
+    t =     9.34s     Synthesize event
+    t =     9.63s     Wait for dev.aireader.local to idle
+    t =     9.84s Tap "saveText" Button
+    t =     9.84s     Wait for dev.aireader.local to idle
+    t =     9.84s     Find the "saveText" Button
+    t =     9.87s     Check for interrupting elements affecting "saveText" Button
+    t =     9.90s     Synthesize event
+    t =    10.19s     Wait for dev.aireader.local to idle
+    t =    10.74s Waiting 5.0s for "newText" Button to exist
+    t =    11.77s     Checking `Expect predicate `existsNoRetry == 1` for object "newText" Button`
+    t =    11.78s         Checking existence of `"newText" Button`
+    t =    11.80s Tap "文件库" Button
+    t =    11.80s     Wait for dev.aireader.local to idle
+    t =    11.80s     Find the "文件库" Button
+    t =    11.83s     Check for interrupting elements affecting "folder" Button
+    t =    11.85s     Synthesize event
+    t =    12.14s     Wait for dev.aireader.local to idle
+    t =    13.95s Tap Button (First Match)
+    t =    13.95s     Wait for dev.aireader.local to idle
+    t =    13.96s     Find the Button (First Match)
+    t =    14.02s     Check for interrupting elements affecting "消去の確認、文本 · 日本語 · 2026年10月24日" Button
+    t =    14.03s     Synthesize event
+    t =    14.32s     Wait for dev.aireader.local to idle
+    t =    14.68s Waiting 5.0s for "reader.back" Button to exist
+    t =    15.73s     Checking `Expect predicate `existsNoRetry == 1` for object "reader.back" Button`
+    t =    15.73s         Checking existence of `"reader.back" Button`
+    t =    15.76s Tap "reader.back" Button
+    t =    15.76s     Wait for dev.aireader.local to idle
+    t =    15.76s     Find the "reader.back" Button
+    t =    15.77s     Check for interrupting elements affecting "reader.back" Button
+    t =    15.79s     Synthesize event
+    t =    16.08s     Wait for dev.aireader.local to idle
+    t =    16.39s Tap "设置" Button
+    t =    16.39s     Wait for dev.aireader.local to idle
+    t =    16.40s     Find the "设置" Button
+    t =    16.42s     Check for interrupting elements affecting "gearshape" Button
+    t =    16.44s     Synthesize event
+    t =    16.73s     Wait for dev.aireader.local to idle
+    t =    18.52s Tap "settings.storage" Button
+    t =    18.52s     Wait for dev.aireader.local to idle
+    t =    18.53s     Find the "settings.storage" Button
+    t =    18.57s     Check for interrupting elements affecting "settings.storage" Button
+    t =    18.59s     Synthesize event
+    t =    18.88s     Wait for dev.aireader.local to idle
+    t =    19.22s Waiting 5.0s for "storage.clearExportCache" Button to exist
+    t =    20.26s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.clearExportCache" Button`
+    t =    20.26s         Checking existence of `"storage.clearExportCache" Button`
+    t =    20.32s Find the "storage.clearExportCache" Button
+    t =    20.35s Tap "storage.clearExportCache" Button
+    t =    20.35s     Wait for dev.aireader.local to idle
+    t =    20.35s     Find the "storage.clearExportCache" Button
+    t =    20.38s     Check for interrupting elements affecting "storage.clearExportCache" Button
+    t =    20.40s     Synthesize event
+    t =    20.68s     Wait for dev.aireader.local to idle
+    t =    22.00s Checking `Expect predicate `isEnabled == 0` for object "storage.clearExportCache" Button`
+    t =    22.00s     Find the "storage.clearExportCache" Button
+    t =    22.03s Find the "storage.clearSpeechCache" Button
+    t =    22.06s Waiting 5.0s for "storage.clearSpeechCache" Button to exist
+    t =    23.09s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.clearSpeechCache" Button`
+    t =    23.10s         Checking existence of `"storage.clearSpeechCache" Button`
+    t =    23.14s Tap "storage.clearSpeechCache" Button
+    t =    23.14s     Wait for dev.aireader.local to idle
+    t =    23.15s     Find the "storage.clearSpeechCache" Button
+    t =    23.17s     Check for interrupting elements affecting "storage.clearSpeechCache" Button
+    t =    23.20s     Synthesize event
+    t =    23.48s     Wait for dev.aireader.local to idle
+    t =    23.74s Find the "storage.resetLibrary" Button
+    t =    24.79s     Find the "storage.resetLibrary" Button (retry 1)
+    t =    25.85s     Find the "storage.resetLibrary" Button (retry 2)
+    t =    25.89s Swipe up Target Application 'dev.aireader.local'
+    t =    25.89s     Wait for dev.aireader.local to idle
+    t =    25.89s     Find the Target Application 'dev.aireader.local'
+    t =    25.92s     Check for interrupting elements affecting "AI Reader" Application
+    t =    25.94s     Synthesize event
+    t =    26.36s     Wait for dev.aireader.local to idle
+    t =    27.10s Find the "storage.resetLibrary" Button
+    t =    27.15s Find the "storage.resetLibrary" Button
+    t =    27.18s Waiting 5.0s for "storage.resetLibrary" Button to exist
+    t =    28.23s     Checking `Expect predicate `existsNoRetry == 1` for object "storage.resetLibrary" Button`
+    t =    28.23s         Checking existence of `"storage.resetLibrary" Button`
+    t =    28.26s Tap "storage.resetLibrary" Button
+    t =    28.26s     Wait for dev.aireader.local to idle
+    t =    28.26s     Find the "storage.resetLibrary" Button
+    t =    28.29s     Check for interrupting elements affecting "storage.resetLibrary" Button
+    t =    28.32s     Synthesize event
+    t =    28.60s     Wait for dev.aireader.local to idle
+    t =    29.00s Tap "继续" Button
+    t =    29.00s     Wait for dev.aireader.local to idle
+    t =    29.01s     Find the "继续" Button
+    t =    29.05s     Check for interrupting elements affecting "storage.continueReset" Button
+    t =    29.09s     Synthesize event
+    t =    29.37s     Wait for dev.aireader.local to idle
+    t =    30.09s Waiting 5.0s for "删除所有本地资料" Button to exist
+    t =    31.14s     Checking `Expect predicate `existsNoRetry == 1` for object "删除所有本地资料" Button`
+    t =    31.15s         Checking existence of `"删除所有本地资料" Button`
+    t =    31.19s Tap "删除所有本地资料" Button
+    t =    31.19s     Wait for dev.aireader.local to idle
+    t =    31.20s     Find the "删除所有本地资料" Button
+    t =    31.23s     Check for interrupting elements affecting "storage.confirmReset" Button
+    t =    31.26s     Synthesize event
+    t =    31.55s     Wait for dev.aireader.local to idle
+    t =    31.97s Tap "文件库" Button
+    t =    31.97s     Wait for dev.aireader.local to idle
+    t =    31.98s     Find the "文件库" Button
+    t =    32.02s     Check for interrupting elements affecting "folder" Button
+    t =    32.05s     Synthesize event
+    t =    32.33s     Wait for dev.aireader.local to idle
+    t =    34.09s Waiting 5.0s for "这里还没有资料" StaticText to exist
+    t =    35.11s     Checking `Expect predicate `existsNoRetry == 1` for object "这里还没有资料" StaticText`
+    t =    35.11s         Checking existence of `"这里还没有资料" StaticText`
+    t =    35.14s Tear Down
+Test Case '-[AIReaderUITests.AIReaderUITests testStorageCacheAndConfirmedReset]' passed (35.392 seconds).
+Test Suite 'AIReaderUITests' passed at 2026-10-24 20:44:10.729.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 304.829 (304.842) seconds
+Test Suite 'AIReaderUITests.xctest' passed at 2026-10-24 20:44:10.730.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 304.829 (304.843) seconds
+Test Suite 'All tests' passed at 2026-10-24 20:44:10.731.
+	 Executed 12 tests, with 0 failures (0 unexpected) in 304.829 (304.844) seconds
+2026-10-24 20:44:10.770 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:10.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:10.771 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:10.783 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:10.783 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:10.784 xcodebuild[88791:42111185] [MT] IDESchemeActionSDKRecord: operatingSystemBuild = <DVTBuildVersion 24A94232>, error = invalidDigitCount(94232).
+2026-10-24 20:44:11.044 xcodebuild[88791:42111185] [MT] IDETestOperationsObserverDebug: 308.422 elapsed -- Testing started completed.
+2026-10-24 20:44:11.044 xcodebuild[88791:42111185] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-24 20:44:11.044 xcodebuild[88791:42111185] [MT] IDETestOperationsObserverDebug: 308.422 sec, +308.422 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/rgwei/pj/pj_my/ai_reader/.build/native-ui-final.xcresult
+
+** TEST SUCCEEDED **
+
+Testing started

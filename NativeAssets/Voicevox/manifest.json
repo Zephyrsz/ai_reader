@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "coreVersion": "0.17.0",
+  "ortVersion": "1.23.2",
+  "backend": "CPU",
+  "files": {
+    "dictionary/COPYING": {
+      "sha256": "f4eca42ebd930e2c6e57fca58319d989bebcd1510cb7714b149c50f5425135ea",
+      "bytes": 5865
+    },
+    "dictionary/char.bin": {
+      "sha256": "888ee94c5a8a7a26d24ab3f1b7155441351954fd51ea06b4a2f78bd742492b2f",
+      "bytes": 262496
+    },
+    "dictionary/left-id.def": {
+      "sha256": "db1adac8a7f9e5854cd82ea044c85115249206c8181b9d88cf92ae2ee5e87b84",
+      "bytes": 77672
+    },
+    "dictionary/matrix.bin": {
+      "sha256": "62fd16b4f64c851d5dc352ef0d5740c5fc83ddc7c203b2b0b1fc5271969a14ce",
+      "bytes": 3792262
+    },
+    "dictionary/pos-id.def": {
+      "sha256": "3460aa742053085af47cdfc889a1e0e6f557e89b406e501ba81c9ccc286de0c7",
+      "bytes": 1923
+    },
+    "dictionary/rewrite.def": {
+      "sha256": "7f7c8dfbfe24092e8a149a9b6e0a3a7f1c2cf37d6c3dc29d1cccc6c004da9c1c",
+      "bytes": 7457
+    },
+    "dictionary/right-id.def": {
+      "sha256": "db1adac8a7f9e5854cd82ea044c85115249206c8181b9d88cf92ae2ee5e87b84",
+      "bytes": 77672
+    },
+    "dictionary/sys.dic": {
+      "sha256": "ca57d9029691a70a5dfb99afc2844180256161d7130da65b1a867510e129b9a6",
+      "bytes": 103073776
+    },
+    "dictionary/unk.dic": {
+      "sha256": "ce97851ecda075914fa3ffe7294a1ab34ee4f6d56ba6bf9197d74143b5dffbfe",
+      "bytes": 5690
+    },
+    "models/0.vvm": {
+      "sha256": "0438d777e2021697f8cf5723bb6687e595b83f1b712261b6b8b6a281db3f013c",
+      "bytes": 58213262
+    },
+    "models/1.vvm": {
+      "sha256": "886ca9093ba0ba6c960973416ad7d4f56e47ad80193c2d9734c2ab869f511b71",
+      "bytes": 59477412
+    },
+    "models/8.vvm": {
+      "sha256": "d2d01d74c84ded36320a3d565939472ff724832133d30b41eee348d1a3a5adf6",
+      "bytes": 58210680
+    },
+    "notices/Dictionary-COPYING.txt": {
+      "sha256": "f4eca42ebd930e2c6e57fca58319d989bebcd1510cb7714b149c50f5425135ea",
+      "bytes": 5865
+    },
+    "notices/ONNX-Runtime-LICENSE.txt": {
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+      "bytes": 1073
+    },
+    "notices/ONNX-Runtime-ThirdPartyNotices.txt": {
+      "sha256": "e9e90971a8e75a9a8ac0c6412e29c1202d079998389915aa485f46c816c3b4cc",
+      "bytes": 326866
+    },
+    "notices/VOICEVOX-Core-LICENSE.txt": {
+      "sha256": "f3d1c14bdea7fc3121303662a2e3ce32a7bc1ef3bbd63375a416044df9b2dc59",
+      "bytes": 1061
+    },
+    "notices/VOICEVOX-model-terms.md": {
+      "sha256": "1cf76dde3422185306848dee5beae06ee7246ead207638084621b5a52ddf5249",
+      "bytes": 24338
+    },
+    "notices/voices/WhiteCUL_67d5d8da-acd7-4207-bb10-b5542d3a663b/metas.json": {
+      "sha256": "788a44a7a8793a99486a10e10d99d8b23000c915237b7a22c27f5c4c252b5975",
+      "bytes": 31
+    },
+    "notices/voices/WhiteCUL_67d5d8da-acd7-4207-bb10-b5542d3a663b/policy.md": {
+      "sha256": "524e522552d1a337a305b9c6d0558ba0a148ad07cf83572d05b719d7efa5cd49",
+      "bytes": 282
+    },
+    "notices/voices/冥鳴ひまり_8eaad775-3119-417e-8cf4-2a10bfd592c8/metas.json": {
+      "sha256": "0c3aa4dc16f3185466348ec9e96677dfc97e229bba0a71142b7804ed5a140294",
+      "bytes": 70
+    },
+    "notices/voices/冥鳴ひまり_8eaad775-3119-417e-8cf4-2a10bfd592c8/policy.md": {
+      "sha256": "6d0f6b68c79c822c01234821d3170d251a5858063f44347ca4615b970214c52a",
+      "bytes": 302
+    },
+    "notices/voices/四国めたん_7ffcb7ce-00ec-4bdc-82cd-45a8889e43ff/metas.json": {
+      "sha256": "a2e560491b575b8663d63ffa6ef7506d41511873d2e3ebbb6186c7950f991d91",
+      "bytes": 76
+    },
+    "notices/voices/四国めたん_7ffcb7ce-00ec-4bdc-82cd-45a8889e43ff/policy.md": {
+      "sha256": "aaea8f7e8dc9459ca34dd92e97b2da2a7a3cafe23cc00ad8cca867c4163a1e61",
+      "bytes": 288
+    },
+    "notices/voices/春日部つむぎ_35b2c544-660e-401e-b503-0e14c635303a/metas.json": {
+      "sha256": "788a44a7a8793a99486a10e10d99d8b23000c915237b7a22c27f5c4c252b5975",
+      "bytes": 31
+    },
+    "notices/voices/春日部つむぎ_35b2c544-660e-401e-b503-0e14c635303a/policy.md": {
+      "sha256": "8fcd88e6e04fe0b6845608b13812c20ebf9a3cb4a0b968b934a74b6bf7f0edaa",
+      "bytes": 297
+    }
+  },
+  "voices": [
+    {
+      "name": "四国めたん",
+      "style": "あまあま",
+      "style_id": 0,
+      "model": "0.vvm"
+    },
+    {
+      "name": "春日部つむぎ",
+      "style": "ノーマル",
+      "style_id": 8,
+      "model": "0.vvm"
+    },
+    {
+      "name": "冥鳴ひまり",
+      "style": "ノーマル",
+      "style_id": 14,
+      "model": "1.vvm"
+    },
+    {
+      "name": "WhiteCUL",
+      "style": "たのしい",
+      "style_id": 24,
+      "model": "8.vvm"
+    }
+  ],
+  "identity": "4d557c01913a6fe717f9fb80ca1b0b00368297ef00e43c083a77dc8b91c5dc50"
+}

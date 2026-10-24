@@ -1,0 +1,100 @@
+[
+  {
+    "theme": "light",
+    "foreground": "text",
+    "background": "bg",
+    "ratio": 15.81,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "muted",
+    "background": "bg",
+    "ratio": 5.5,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "text",
+    "background": "surface",
+    "ratio": 16.77,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "muted",
+    "background": "surface",
+    "ratio": 5.84,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "accent",
+    "background": "surface",
+    "ratio": 6.23,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "hi",
+    "background": "highlight",
+    "ratio": 7.67,
+    "passes": true
+  },
+  {
+    "theme": "light",
+    "foreground": "onButtonPrimary",
+    "background": "button",
+    "ratio": 6.23,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "text",
+    "background": "bg",
+    "ratio": 17.04,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "muted",
+    "background": "bg",
+    "ratio": 9.87,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "text",
+    "background": "surface",
+    "ratio": 14.86,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "muted",
+    "background": "surface",
+    "ratio": 8.61,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "accent",
+    "background": "surface",
+    "ratio": 7.59,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "hi",
+    "background": "highlight",
+    "ratio": 9.32,
+    "passes": true
+  },
+  {
+    "theme": "dark",
+    "foreground": "onButtonPrimary",
+    "background": "button",
+    "ratio": 5.29,
+    "passes": true
+  }
+]

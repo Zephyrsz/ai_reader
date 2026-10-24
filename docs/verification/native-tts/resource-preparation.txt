@@ -1,0 +1,4 @@
+/Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_core.xcframework/ios-arm64_x86_64-simulator/voicevox_core.framework: replacing existing signature
+/Users/rgwei/pj/pj_my/ai_reader/Vendor/voicevox_onnxruntime.xcframework/ios-arm64_x86_64-simulator/voicevox_onnxruntime.framework: replacing existing signature
+Prepared Core 0.17.0 / dedicated ORT 1.23.2; styles [0, 8, 14, 24]
+Resource identity: 4d557c01913a6fe717f9fb80ca1b0b00368297ef00e43c083a77dc8b91c5dc50; 25 verified files

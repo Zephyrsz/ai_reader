@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI Reader · iOS 设计评审</title>
+<style>
+:root{--bg:#f7f8fc;--surface:#fff;--text:#191d2b;--muted:#5d6578;--accent:#4549e8;--line:#e3e6ef}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;line-height:1.6}main{max-width:1480px;margin:auto;padding:48px 32px 64px}header{max-width:880px}h1{font-size:clamp(28px,4vw,46px);line-height:1.2;margin:16px 0}h2{font-size:24px;margin:44px 0 8px}p{color:var(--muted);margin:8px 0 20px}a{color:var(--accent);text-underline-offset:4px}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.eyebrow{font-size:13px;font-weight:650;letter-spacing:2px;color:var(--accent)}nav{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}nav a{min-height:44px;display:flex;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px 16px;text-decoration:none;font-size:14px}.note{padding:16px 20px;background:#ecebff;border-radius:16px;color:#3338b0;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin:24px 0}.card{min-width:0}.card h3{font-size:16px;margin:0 0 12px}.card a{display:block;border-radius:32px;overflow:hidden;border:1px solid #c7ccdb}.card img{display:block;width:100%;height:auto;aspect-ratio:390/844}.card p{font-size:13px;margin-top:12px}.two{max-width:850px}.docs{display:flex;gap:24px;flex-wrap:wrap}footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}@media(min-width:1200px){.core{grid-template-columns:repeat(4,1fr)}.support{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){main{padding:32px 20px}.grid{gap:24px}.card{max-width:390px;margin-inline:auto;width:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<main>
+<header><div class="eyebrow">AI READER / IOS / LOCAL FIRST</div><h1>让阅读，留在本机。</h1><p>面向日语的 iOS 本地朗读工具。先建立文本、文件与阅读体验，再接入设备端语音。</p><div class="note">原始设计档案：此页为静态视觉稿索引，文件、容量、计时与高亮为样例。当前已有 SwiftUI M0 原生工程；真实 TTS 尚未接入。<a href="implemented/index.html">查看实际原生界面截图</a>，点击下方图稿查看原始 SVG。</div></header>
+<nav aria-label="设计与规格导航"><a href="#core">四个核心页面</a><a href="#support">辅助页面</a><a href="#themes">深浅色</a><a href="../docs/product-spec.md">产品规格</a><a href="../docs/architecture.md">本地架构</a><a href="../docs/roadmap.md">开发分期</a></nav>
+<section id="core"><h2>从内容，到专注阅读</h2><p>参考四张原图的层级与阅读方式，统一为克制的蓝紫色视觉语言。</p><div class="grid core">
+<article class="card"><h3>01 / 首页</h3><a href="01-home.svg"><img src="01-home.svg" alt="首页：继续阅读、三种内容入口、最近文件与三个底栏" width="390" height="844"></a><p>继续阅读优先；文件导入不经过服务端。</p></article>
+<article class="card"><h3>02 / 文本阅读</h3><a href="02-text-reader.svg"><img src="02-text-reader.svg" alt="日语阅读器：句子高亮、文本工具和悬浮播放器；接入后状态示意" width="390" height="844"></a><p>播放态示意；无引擎版本显示明确的未就绪状态。</p></article>
+<article class="card"><h3>03 / 语速调整</h3><a href="03-speed.svg"><img src="03-speed.svg" alt="语速底部面板：倍速、加减、滑杆、预设及默认设置" width="390" height="844"></a><p>加减可代替滑动；M0 原生版本已支持保存偏好；此处为原始设计图。</p></article>
+<article class="card"><h3>04 / PDF 阅读</h3><a href="04-pdf-reader.svg"><img src="04-pdf-reader.svg" alt="PDF阅读器：原文和文本切换、页码目录与播放器" width="390" height="844"></a><p>保留原文；提取文本与原页映射分层管理。</p></article>
+</div></section>
+<section id="support"><h2>把阅读之外的路径，也设计完整</h2><p>导入、保存、查找、管理、空态和资源缺失都有明确的下一步。</p><div class="grid support">
+<article class="card"><h3>05 / 文件库</h3><a href="05-library.svg"><img src="05-library.svg" alt="文件库：搜索、筛选、文件夹和文件列表" width="390" height="844" loading="lazy"></a><p>文件夹、收藏、搜索、排序与批量管理。</p></article>
+<article class="card"><h3>06 / 导入确认</h3><a href="06-import.svg"><img src="06-import.svg" alt="导入确认：文件详情、语言、目标文件夹和本地隐私说明" width="390" height="844" loading="lazy"></a><p>先确认，再复制与解析；失败按项恢复。</p></article>
+<article class="card"><h3>07 / 文本编辑</h3><a href="07-editor.svg"><img src="07-editor.svg" alt="文本编辑：标题、日语正文、粘贴、字数和保存状态" width="390" height="844" loading="lazy"></a><p>草稿自动保存；失败保留原输入。</p></article>
+<article class="card"><h3>08 / 语音与语言</h3><a href="08-voices.svg"><img src="08-voices.svg" alt="语音管理未接入状态，日语默认，试听禁用" width="390" height="844" loading="lazy"></a><p>明确未接入；不制造已下载的模型和音色。</p></article>
+<article class="card"><h3>09 / 设置</h3><a href="09-settings.svg"><img src="09-settings.svg" alt="设置：语音、语速、阅读显示、外观、存储与最近删除" width="390" height="844" loading="lazy"></a><p>默认偏好、存储清理与可恢复删除。</p></article>
+<article class="card"><h3>10 / 首次使用</h3><a href="10-empty.svg"><img src="10-empty.svg" alt="首次使用空文件库：导入文件与新建文本两个操作" width="390" height="844" loading="lazy"></a><p>不展示虚假的用户资料；引导第一次创建。</p></article>
+</div></section>
+<section id="themes"><h2>同一套阅读层级，两种环境</h2><p>浅色与深色分别定义语义颜色。原生动态字号与横屏行为以规格为准，需在实际工程验证。</p><div class="grid two"><article class="card"><h3>浅色</h3><a href="02-text-reader.svg"><img src="02-text-reader.svg" alt="浅色阅读器" width="390" height="844" loading="lazy"></a></article><article class="card"><h3>深色</h3><a href="11-reader-dark.svg"><img src="11-reader-dark.svg" alt="深色阅读器" width="390" height="844" loading="lazy"></a></article></div></section>
+<footer><div class="docs"><a href="../README.md">交付入口</a><a href="review.md">验证记录</a><a href="../design-system/ai-reader/MASTER.md">设计系统</a></div><p>2026-10-23 · 首发日语，后续按语言资源扩展。SVG 可编辑，PNG 用于快速预览。</p></footer>
+</main></html>

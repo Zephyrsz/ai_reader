@@ -1,0 +1,89 @@
+[
+  {
+    "type": "gallery",
+    "width": 375,
+    "height": 844,
+    "documentWidth": 375,
+    "scrollWidth": 375,
+    "overflow": false
+  },
+  {
+    "type": "gallery",
+    "width": 844,
+    "height": 390,
+    "documentWidth": 844,
+    "scrollWidth": 844,
+    "overflow": false
+  },
+  {
+    "type": "gallery",
+    "width": 768,
+    "height": 1024,
+    "documentWidth": 768,
+    "scrollWidth": 768,
+    "overflow": false
+  },
+  {
+    "type": "gallery",
+    "width": 1440,
+    "height": 1000,
+    "documentWidth": 1440,
+    "scrollWidth": 1440,
+    "overflow": false
+  },
+  {
+    "type": "screen",
+    "file": "01-home.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "02-text-reader.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "03-speed.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "04-pdf-reader.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "05-library.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "06-import.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "07-editor.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "08-voices.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "09-settings.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "10-empty.svg",
+    "overflow": []
+  },
+  {
+    "type": "screen",
+    "file": "11-reader-dark.svg",
+    "overflow": []
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "backend": "CPU",
+  "cpu_threads": 2,
+  "platform": "iOS Simulator",
+  "host": "arm64",
+  "measurement_test_result": ".build/native-clean.xcresult",
+  "measurement_local_time": "2026-10-24 20:32 Asia/Shanghai",
+  "latest_native_result": ".build/native-complete.xcresult",
+  "resource_identity": "4d557c01913a6fe717f9fb80ca1b0b00368297ef00e43c083a77dc8b91c5dc50",
+  "model_core": "0.17.0",
+  "dedicated_ort": "1.23.2",
+  "audio": [
+    {
+      "file": "style-0.wav",
+      "sha256": "33c6979b0503614b96e6503f060f6b4b0711c44757a619a7a9a31cf4c0704228",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_s": 2.6133333333333333,
+      "peak": 10921,
+      "credit": "VOICEVOX:四国めたん / あまあま"
+    },
+    {
+      "file": "style-14.wav",
+      "sha256": "6b6ff0a84ce5127e4bab04ebb32f213c460fb9ea522c0412650884ec15e005fc",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_s": 2.5813333333333333,
+      "peak": 8674,
+      "credit": "VOICEVOX:冥鳴ひまり / ノーマル"
+    },
+    {
+      "file": "style-24.wav",
+      "sha256": "0d3e0b2147782e42705c99d715bd514a3c7680e7fbffe1dda8ae55662761c98d",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_s": 2.474666666666667,
+      "peak": 10383,
+      "credit": "VOICEVOX:WhiteCUL / たのしい"
+    },
+    {
+      "file": "style-8.wav",
+      "sha256": "2d5b38a4c011403f323a985c0399fdff9e71f1faffbb4f512b0983fea5e8b590",
+      "sample_rate": 24000,
+      "channels": 1,
+      "duration_s": 2.570666666666667,
+      "peak": 16695,
+      "credit": "VOICEVOX:春日部つむぎ / ノーマル"
+    }
+  ]
+}

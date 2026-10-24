@@ -1,0 +1,96 @@
+Building for debugging...
+[2 / 13] ReaderCore
+[4 / 15] ReaderCore
+[11 / 16] ReaderCoreTests-product
+[13 / 18] ReaderCoreTests-product
+[17 / 20] ReaderCoreTests-product
+[19 / 23] ReaderCoreTests-product
+Build complete! (1.22秒)
+Test Suite 'All tests' started at 2026-10-24 20:32:02.093.
+Test Suite 'ReaderCoreTests.xctest' started at 2026-10-24 20:32:02.093.
+Test Suite 'LibraryQueryTests' started at 2026-10-24 20:32:02.093.
+Test Case '-[ReaderCoreTests.LibraryQueryTests testFolderFavoritesAndTypeFiltersCombineWithoutLeakingOtherDocuments]' started.
+Test Case '-[ReaderCoreTests.LibraryQueryTests testFolderFavoritesAndTypeFiltersCombineWithoutLeakingOtherDocuments]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.LibraryQueryTests testRecentSortUsesLastOpenWhileDateAddedUsesCreation]' started.
+Test Case '-[ReaderCoreTests.LibraryQueryTests testRecentSortUsesLastOpenWhileDateAddedUsesCreation]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.LibraryQueryTests testSearchIncludesJapaneseBodyAndExcludesTrash]' started.
+Test Case '-[ReaderCoreTests.LibraryQueryTests testSearchIncludesJapaneseBodyAndExcludesTrash]' passed (0.000 seconds).
+Test Suite 'LibraryQueryTests' passed at 2026-10-24 20:32:02.095.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'LibraryRecoveryTests' started at 2026-10-24 20:32:02.095.
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testCompletedResetPersistsEmptyLibraryAndDefaultPreferences]' started.
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testCompletedResetPersistsEmptyLibraryAndDefaultPreferences]' passed (0.005 seconds).
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testInterruptedResetRecoversTheOriginalLibraryBeforeOpening]' started.
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testInterruptedResetRecoversTheOriginalLibraryBeforeOpening]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testResetPreparationFailurePreservesAllExistingData]' started.
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testResetPreparationFailurePreservesAllExistingData]' passed (0.003 seconds).
+Test Suite 'LibraryRecoveryTests' passed at 2026-10-24 20:32:02.105.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.010 (0.011) seconds
+Test Suite 'LibraryRepositoryTests' started at 2026-10-24 20:32:02.105.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testBodyEditInvalidatesPositionAndPreservesOrphanBookmarkExcerpt]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testBodyEditInvalidatesPositionAndPreservesOrphanBookmarkExcerpt]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testCorruptDocumentIsReportedAndNeverOverwrittenOnLoad]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testCorruptDocumentIsReportedAndNeverOverwrittenOnLoad]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDeletingFolderMovesDocumentsToRootWithoutDeletingContent]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDeletingFolderMovesDocumentsToRootWithoutDeletingContent]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDraftPreferencesAndBookmarkPersistAndCacheCleanupKeepsContent]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDraftPreferencesAndBookmarkPersistAndCacheCleanupKeepsContent]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testFailedWriteDoesNotReplaceInMemoryDocument]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testFailedWriteDoesNotReplaceInMemoryDocument]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportCopiesOriginalAndRejectsContentDuplicateEvenWithDifferentFilename]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportCopiesOriginalAndRejectsContentDuplicateEvenWithDifferentFilename]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportLimitsAndEmptyScannedPDF]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportLimitsAndEmptyScannedPDF]' passed (0.005 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testJapaneseTextSurvivesRepositoryReopenAndGetsTitleFromBody]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testJapaneseTextSurvivesRepositoryReopenAndGetsTitleFromBody]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testTrashRestoreAndExpiryNeverDeleteActiveDocuments]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testTrashRestoreAndExpiryNeverDeleteActiveDocuments]' passed (0.004 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testWhitespaceOnlyTextIsRejectedWithoutCreatingDocument]' started.
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testWhitespaceOnlyTextIsRejectedWithoutCreatingDocument]' passed (0.001 seconds).
+Test Suite 'LibraryRepositoryTests' passed at 2026-10-24 20:32:02.133.
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.027 (0.028) seconds
+Test Suite 'SpeechTests' started at 2026-10-24 20:32:02.133.
+Test Case '-[ReaderCoreTests.SpeechTests testCacheBudgetEvictsOlderAudio]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testCacheBudgetEvictsOlderAudio]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testCacheSeparatesVoiceRateAndRuntimeAndRegeneratesCorruption]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testCacheSeparatesVoiceRateAndRuntimeAndRegeneratesCorruption]' passed (0.004 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testCancelDiscardsInFlightOutputAndAllowsANewSession]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testCancelDiscardsInFlightOutputAndAllowsANewSession]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testInvalidRequestsDoNotReachNativeRuntime]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testInvalidRequestsDoNotReachNativeRuntime]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testJapaneseSentencesKeepClosingQuotesAndParagraphMapping]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testJapaneseSentencesKeepClosingQuotesAndParagraphMapping]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testOldPreferencesDecodeAndNewVoicePersists]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testOldPreferencesDecodeAndNewVoicePersists]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testQueuedCancelledRequestNeverProducesAudio]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testQueuedCancelledRequestNeverProducesAudio]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testRepeatedTerminalPunctuationStillRespectsSegmentLimit]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testRepeatedTerminalPunctuationStillRespectsSegmentLimit]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.SpeechTests testUnpunctuatedTextIsBoundedWithoutLosingCharacters]' started.
+Test Case '-[ReaderCoreTests.SpeechTests testUnpunctuatedTextIsBoundedWithoutLosingCharacters]' passed (0.000 seconds).
+Test Suite 'SpeechTests' passed at 2026-10-24 20:32:02.143.
+	 Executed 9 tests, with 0 failures (0 unexpected) in 0.009 (0.010) seconds
+Test Suite 'TTSEngineTests' started at 2026-10-24 20:32:02.143.
+Test Case '-[ReaderCoreTests.TTSEngineTests testDeferredEngineAdvertisesNoLanguagesAndNeverCreatesAudio]' started.
+Test Case '-[ReaderCoreTests.TTSEngineTests testDeferredEngineAdvertisesNoLanguagesAndNeverCreatesAudio]' passed (0.000 seconds).
+Test Suite 'TTSEngineTests' passed at 2026-10-24 20:32:02.143.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Suite 'TextDecoderTests' started at 2026-10-24 20:32:02.143.
+Test Case '-[ReaderCoreTests.TextDecoderTests testMalformedUTF8IsRejected]' started.
+Test Case '-[ReaderCoreTests.TextDecoderTests testMalformedUTF8IsRejected]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testShiftJISRequiresExplicitChoiceInsteadOfSilentMojibake]' started.
+Test Case '-[ReaderCoreTests.TextDecoderTests testShiftJISRequiresExplicitChoiceInsteadOfSilentMojibake]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF16BOMIsDetected]' started.
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF16BOMIsDetected]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF8BOMIsRemovedAndNewlinesNormalized]' started.
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF8BOMIsRemovedAndNewlinesNormalized]' passed (0.000 seconds).
+Test Suite 'TextDecoderTests' passed at 2026-10-24 20:32:02.144.
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ReaderCoreTests.xctest' passed at 2026-10-24 20:32:02.144.
+	 Executed 30 tests, with 0 failures (0 unexpected) in 0.048 (0.051) seconds
+Test Suite 'All tests' passed at 2026-10-24 20:32:02.144.
+	 Executed 30 tests, with 0 failures (0 unexpected) in 0.048 (0.051) seconds
+◇ Test run started.
+↳ Testing Library Version: 2084
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

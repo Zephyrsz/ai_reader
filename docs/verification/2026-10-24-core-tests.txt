@@ -1,0 +1,30 @@
+ReaderCore / xcrun swift test / latest verification
+Test Case '-[ReaderCoreTests.LibraryQueryTests testFolderFavoritesAndTypeFiltersCombineWithoutLeakingOtherDocuments]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.LibraryQueryTests testRecentSortUsesLastOpenWhileDateAddedUsesCreation]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.LibraryQueryTests testSearchIncludesJapaneseBodyAndExcludesTrash]' passed (0.000 seconds).
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testCompletedResetPersistsEmptyLibraryAndDefaultPreferences]' passed (0.003 seconds).
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testInterruptedResetRecoversTheOriginalLibraryBeforeOpening]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRecoveryTests testResetPreparationFailurePreservesAllExistingData]' passed (0.002 seconds).
+	 Executed 3 tests, with 0 failures (0 unexpected) in 0.007 (0.007) seconds
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testBodyEditInvalidatesPositionAndPreservesOrphanBookmarkExcerpt]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testCorruptDocumentIsReportedAndNeverOverwrittenOnLoad]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDeletingFolderMovesDocumentsToRootWithoutDeletingContent]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testDraftPreferencesAndBookmarkPersistAndCacheCleanupKeepsContent]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testFailedWriteDoesNotReplaceInMemoryDocument]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportCopiesOriginalAndRejectsContentDuplicateEvenWithDifferentFilename]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testImportLimitsAndEmptyScannedPDF]' passed (0.004 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testJapaneseTextSurvivesRepositoryReopenAndGetsTitleFromBody]' passed (0.001 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testTrashRestoreAndExpiryNeverDeleteActiveDocuments]' passed (0.002 seconds).
+Test Case '-[ReaderCoreTests.LibraryRepositoryTests testWhitespaceOnlyTextIsRejectedWithoutCreatingDocument]' passed (0.001 seconds).
+	 Executed 10 tests, with 0 failures (0 unexpected) in 0.017 (0.017) seconds
+Test Case '-[ReaderCoreTests.TTSEngineTests testDeferredEngineAdvertisesNoLanguagesAndNeverCreatesAudio]' passed (0.000 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.000) seconds
+Test Case '-[ReaderCoreTests.TextDecoderTests testMalformedUTF8IsRejected]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testShiftJISRequiresExplicitChoiceInsteadOfSilentMojibake]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF16BOMIsDetected]' passed (0.000 seconds).
+Test Case '-[ReaderCoreTests.TextDecoderTests testUTF8BOMIsRemovedAndNewlinesNormalized]' passed (0.000 seconds).
+	 Executed 4 tests, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+	 Executed 21 tests, with 0 failures (0 unexpected) in 0.025 (0.026) seconds
+Test Suite 'All tests' passed at 2026-10-24 00:45:00.762.
+	 Executed 21 tests, with 0 failures (0 unexpected) in 0.025 (0.026) seconds

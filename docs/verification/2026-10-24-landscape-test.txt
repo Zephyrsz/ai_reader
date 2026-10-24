@@ -1,0 +1,10 @@
+Focused landscape layout and screenshot verification / iPhone 17e / iOS 27 Simulator
+Result bundle: .build/results/AIReaderLandscape-16.xcresult
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project AIReader.xcodeproj -scheme AIReader -destination "platform=iOS Simulator,id=63707348-8CCD-41CE-BCFA-E396A102F3A3" -derivedDataPath .build/xcode -resultBundlePath .build/results/AIReaderLandscape-16.xcresult "-only-testing:AIReaderUITests/AIReaderUITests/testLandscapeReaderKeepsControlsAvailable" CODE_SIGNING_ALLOWED=NO test
+Test Case '-[AIReaderUITests.AIReaderUITests testLandscapeReaderKeepsControlsAvailable]' started.
+Test Case '-[AIReaderUITests.AIReaderUITests testLandscapeReaderKeepsControlsAvailable]' passed (20.523 seconds).
+	 Executed 1 test, with 0 failures (0 unexpected) in 20.523 (20.525) seconds
+	 Executed 1 test, with 0 failures (0 unexpected) in 20.523 (20.526) seconds
+Test Suite 'Selected tests' passed at 2026-10-24 00:44:25.576.
+	 Executed 1 test, with 0 failures (0 unexpected) in 20.523 (20.527) seconds
+** TEST SUCCEEDED **

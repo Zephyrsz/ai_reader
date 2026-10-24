@@ -1,0 +1,94 @@
+[
+  {
+    "file": "library.png",
+    "title": "文件库与重启恢复",
+    "test": "AIReaderUITests/testCreateReadEditAndRelaunchPersistsJapaneseText()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "text-reader.png",
+    "title": "文本阅读 · 语音尚未接入",
+    "test": "AIReaderUITests/testCreateReadEditAndRelaunchPersistsJapaneseText()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "editor.png",
+    "title": "文本编辑与本机草稿",
+    "test": "AIReaderUITests/testCreateReadEditAndRelaunchPersistsJapaneseText()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "home.png",
+    "title": "首页",
+    "test": "AIReaderUITests/testCreateReadEditAndRelaunchPersistsJapaneseText()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "dark-appearance.png",
+    "title": "深色阅读设置",
+    "test": "AIReaderUITests/testDefaultSpeedAndAppearancePersistAcrossRelaunch()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "speed.png",
+    "title": "语速偏好",
+    "test": "AIReaderUITests/testDefaultSpeedAndAppearancePersistAcrossRelaunch()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "settings.png",
+    "title": "设置",
+    "test": "AIReaderUITests/testDraftRecoveryAndSettingsRemainAvailable()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "duplicate.png",
+    "title": "重复文件处理",
+    "test": "AIReaderUITests/testFileImportPreservesTXTNameAndDetectsDuplicate()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "txt-import.png",
+    "title": "TXT 导入",
+    "test": "AIReaderUITests/testFileImportPreservesTXTNameAndDetectsDuplicate()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "folders.png",
+    "title": "文件夹与资料管理",
+    "test": "AIReaderUITests/testFoldersMoveAndJapaneseBodySearch()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "landscape.png",
+    "title": "横屏阅读器",
+    "test": "AIReaderUITests/testLandscapeReaderKeepsControlsAvailable()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderLandscape-16.xcresult",
+    "processing": "Applied EXIF orientation to pixels; no crop or content edits."
+  },
+  {
+    "file": "pdf-text.png",
+    "title": "PDF 提取文本",
+    "test": "AIReaderUITests/testPDFImportOriginalAndExtractedTextModes()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  },
+  {
+    "file": "pdf-original.png",
+    "title": "PDF 原文",
+    "test": "AIReaderUITests/testPDFImportOriginalAndExtractedTextModes()",
+    "device": "iPhone 17e",
+    "sourceBundle": ".build/results/AIReaderUITests-15.xcresult"
+  }
+]
