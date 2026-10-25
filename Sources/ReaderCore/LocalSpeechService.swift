@@ -35,6 +35,8 @@ public final class LocalSpeechService: TTSEngine, @unchecked Sendable {
     public func synthesize(text: String, language: String, voice: SpeechVoice, rate: Double) async throws -> URL {
         let request = try SpeechRequest(text: text, language: language, voice: voice, rate: rate)
         return try await submit { ticket in
+            try self.runtime.prepare()
+            try self.state.check(ticket)
             let encoder = JSONEncoder(); encoder.outputFormatting = [.sortedKeys]
             var identity = Data(self.runtime.cacheIdentity.utf8)
             identity.append(try encoder.encode(request))
@@ -44,15 +46,20 @@ public final class LocalSpeechService: TTSEngine, @unchecked Sendable {
                 try? FileManager.default.setAttributes([.modificationDate: Date()], ofItemAtPath: url.path)
                 return url
             }
-            try self.runtime.prepare()
-            try self.state.check(ticket)
             let data = try self.runtime.synthesize(request)
             _ = try SpeechWAV(data: data)
             try self.state.check(ticket)
+            // A preferred backend may have fallen back while synthesizing. Use
+            // the effective backend identity for the generated file, never the
+            // identity that was only used for the cache lookup.
+            var effectiveIdentity = Data(self.runtime.cacheIdentity.utf8)
+            effectiveIdentity.append(try encoder.encode(request))
+            let effectiveKey = SHA256.hash(data: effectiveIdentity).map { String(format: "%02x", $0) }.joined()
+            let effectiveURL = self.cacheDirectory.appendingPathComponent(effectiveKey + ".wav")
             try FileManager.default.createDirectory(at: self.cacheDirectory, withIntermediateDirectories: true)
-            try data.write(to: url, options: .atomic)
-            try self.trimCache(keeping: url)
-            return url
+            try data.write(to: effectiveURL, options: .atomic)
+            try self.trimCache(keeping: effectiveURL)
+            return effectiveURL
         }
     }
 

@@ -6,6 +6,8 @@ SwiftUI 原生 iOS 项目，最低 **iOS 17**。支持本机文本/PDF 阅读和
 
 [原生 TTS 实现、测量及验证说明](docs/native-tts-integration.md)
 
+`feature/cpu-baseline` 保存四音色原生 CPU 版本；`feature/coreml-ane` 收纳 Core ML／ANE 开发组件。分支范围与后续缺口见 [分支说明](docs/branches.md)。
+
 ## 运行
 
 资源已准备在 `Vendor/` 与 `NativeAssets/`；需重新生成时先运行 `python3 Scripts/prepare_voicevox.py --source ../vv_tts_server`（仅开发准备使用 Python）。
