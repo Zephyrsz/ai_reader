@@ -50,6 +50,8 @@ public struct SpeechSegment: Equatable, Sendable, Identifiable {
     public let id: Int
     public let text: String
     public let paragraphIndex: Int
+    /// Character offsets in the original paragraph, shared by chunks of one sentence.
+    public let sentenceRange: Range<Int>
 }
 
 public enum JapaneseSpeechSegmenter {
@@ -62,15 +64,32 @@ public enum JapaneseSpeechSegmenter {
         for (paragraphIndex, paragraph) in paragraphs.enumerated() {
             let chars = Array(paragraph)
             var start = 0
+            var sentenceEnd = 0
+            var sentenceRange = 0..<0
             while start < chars.count {
+                if start >= sentenceEnd {
+                    sentenceEnd = start
+                    while sentenceEnd < chars.count {
+                        let char = chars[sentenceEnd]
+                        sentenceEnd += 1
+                        if terminals.contains(char) {
+                            while sentenceEnd < chars.count && (closers.contains(chars[sentenceEnd]) || terminals.contains(chars[sentenceEnd])) { sentenceEnd += 1 }
+                            break
+                        }
+                    }
+                    var first = start, last = sentenceEnd
+                    while first < last && chars[first].isWhitespace { first += 1 }
+                    while last > first && chars[last - 1].isWhitespace { last -= 1 }
+                    sentenceRange = first..<last
+                }
                 var end = start
                 var lastBreak: Int?
-                while end < chars.count {
+                while end < sentenceEnd {
                     let char = chars[end]
                     end += 1
                     if breaks.contains(char) { lastBreak = end }
                     if terminals.contains(char) {
-                        while end < chars.count && end - start < limit && (closers.contains(chars[end]) || terminals.contains(chars[end])) { end += 1 }
+                        while end < sentenceEnd && end - start < limit && (closers.contains(chars[end]) || terminals.contains(chars[end])) { end += 1 }
                         break
                     }
                     if end - start >= limit {
@@ -79,7 +98,7 @@ public enum JapaneseSpeechSegmenter {
                     }
                 }
                 let text = String(chars[start..<end]).trimmingCharacters(in: .whitespacesAndNewlines)
-                if !text.isEmpty { result.append(SpeechSegment(id: result.count, text: text, paragraphIndex: paragraphIndex)) }
+                if !text.isEmpty { result.append(SpeechSegment(id: result.count, text: text, paragraphIndex: paragraphIndex, sentenceRange: sentenceRange)) }
                 start = end
             }
         }

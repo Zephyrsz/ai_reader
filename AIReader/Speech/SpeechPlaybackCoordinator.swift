@@ -17,10 +17,16 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
     private(set) var errorMessage: String?
     private(set) var voice: SpeechVoice = .metan
     private(set) var rate = 1.0
+    private(set) var highlightedSegmentIndex: Int?
     var onParagraph: ((UUID, Int) -> Void)?
     let service: LocalSpeechService
     var isActive: Bool { state == .playing || state == .preparing }
     var hasSession: Bool { state != .idle }
+    var canChangeVoice: Bool { !isActive }
+    var highlightedSentence: SpeechSegment? {
+        guard let index = highlightedSegmentIndex, segments.indices.contains(index) else { return nil }
+        return segments[index]
+    }
     var status: String {
         switch state {
         case .idle: return "日语 · 离线朗读"
@@ -110,6 +116,7 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
                 guard self.session == token, self.wantsPlayback, !Task.isCancelled else { return }
                 if let player = self.player {
                     guard player.play() else { self.fail(SpeechError.invalidAudio); return }
+                    self.highlightedSegmentIndex = self.segmentIndex
                     self.state = .playing
                 } else { self.beginBackgroundTask() }
                 self.updateNowPlaying()
@@ -130,7 +137,7 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
     func stop() {
         cancelPipeline()
         state = .idle; documentID = nil; document = nil; title = ""
-        segments = []; segmentCount = 0; errorMessage = nil
+        segments = []; segmentCount = 0; errorMessage = nil; highlightedSegmentIndex = nil
         service.releaseResources()
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nil
         audioSession.deactivate()
@@ -191,11 +198,12 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
                         let next = self.segments[position + 1].text
                         self.prefetch = Task { try await self.service.synthesize(text: next, language: "ja-JP", voice: currentVoice, rate: currentRate) }
                     }
-                    try await self.play(url, session: token)
+                    try await self.play(url, session: token, position: position)
                     guard self.session == token else { return }
                     self.player = nil
                 }
                 self.state = .completed
+                self.highlightedSegmentIndex = nil
                 self.player = nil; self.endBackgroundTask(); self.updateNowPlaying()
                 self.audioSession.deactivate()
                 self.service.releaseResources()
@@ -207,7 +215,7 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
         }
     }
 
-    private func play(_ url: URL, session token: UUID) async throws {
+    private func play(_ url: URL, session token: UUID, position: Int) async throws {
         let prepared = try await audioSession.preparePlayer(url)
         try Task.checkCancellation()
         guard session == token else { throw CancellationError() }
@@ -217,7 +225,10 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
         try await withCheckedThrowingContinuation { continuation in
             completion = continuation
             if wantsPlayback {
-                if audio.play() { state = .playing }
+                if audio.play() {
+                    highlightedSegmentIndex = position
+                    state = .playing
+                }
                 else { finishAudio(.failure(SpeechError.invalidAudio)) }
             } else { state = .paused }
             endBackgroundTask(); updateNowPlaying()
@@ -241,7 +252,7 @@ final class SpeechPlaybackCoordinator: NSObject, AVAudioPlayerDelegate {
     }
 
     private func fail(_ error: Error) {
-        cancelPipeline(); state = .failed; errorMessage = error.localizedDescription
+        cancelPipeline(); state = .failed; errorMessage = error.localizedDescription; highlightedSegmentIndex = nil
         updateNowPlaying()
         audioSession.deactivate()
         service.releaseResources()

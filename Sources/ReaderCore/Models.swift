@@ -128,7 +128,7 @@ public enum RepositoryError: Error, LocalizedError, Equatable {
         case .unsupportedFile: return "目前支持 PDF、TXT 和 MD 文件。"
         case .fileTooLarge: return "单个文件不能超过 50 MB。"
         case .textTooLong: return "文本不能超过 20 万个字符。"
-        case .tooManyPages: return "PDF 不能超过 300 页。"
+        case .tooManyPages: return "PDF 不能超过 1000 页。"
         case .duplicate: return "此文件已在资料库中。"
         case .notInTrash: return "请先将资料移入最近删除。"
         case .invalidEncoding: return "无法按此编码读取文本，请选择其他编码。"

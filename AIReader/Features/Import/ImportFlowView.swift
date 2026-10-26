@@ -41,7 +41,7 @@ struct ImportFlowView: View {
 
     private let maxBytes: Int64 = 50 * 1024 * 1024
     private let maxCharacters = 200_000
-    private let maxPages = 300
+    private let maxPages = 1000
 
     var body: some View {
         NavigationStack {
@@ -196,7 +196,7 @@ struct ImportFlowView: View {
             let parsed = try await Task.detached(priority: .userInitiated) { () -> (String, [String], String?) in
                 if kind == .pdf {
                     guard let pdf = PDFDocument(url: staged) else { throw RepositoryError.unsupportedFile }
-                    guard pdf.pageCount <= 300 else { throw RepositoryError.tooManyPages }
+                    guard pdf.pageCount <= maxPages else { throw RepositoryError.tooManyPages }
                     if pdf.isLocked && !pdf.unlock(withPassword: password) { return ("", [], "password") }
                     let pages = (0..<pdf.pageCount).map { pdf.page(at: $0)?.string ?? "" }
                     let missing = pages.enumerated().filter { $0.element.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }.map { String($0.offset + 1) }

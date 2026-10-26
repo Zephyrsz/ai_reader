@@ -2,6 +2,19 @@ import XCTest
 @testable import ReaderCore
 
 final class SpeechTests: XCTestCase {
+    func testSentenceHighlightRangesDistinguishRepeatedTextAndKeepQuotes() {
+        let segments = JapaneseSpeechSegmenter.segments(paragraphs: ["同じ文。同じ文。 「次です！」  最後。", "👨‍👩‍👧‍👦と読む。"])
+        XCTAssertEqual(segments.map(\.sentenceRange), [0..<4, 4..<8, 9..<15, 17..<20, 0..<5])
+    }
+
+    func testLongSentenceKeepsOneHighlightAcrossSynthesisChunks() {
+        let text = String(repeating: "あ", count: 75) + "。次。"
+        let segments = JapaneseSpeechSegmenter.segments(paragraphs: [text], maximumCharacters: 50)
+        XCTAssertEqual(segments.map(\.sentenceRange), [0..<76, 0..<76, 76..<78])
+        XCTAssertEqual(segments.map(\.text).joined(), text)
+        XCTAssertTrue(segments.allSatisfy { $0.text.count <= 50 })
+    }
+
     func testRepeatedTerminalPunctuationStillRespectsSegmentLimit() {
         let text = "日本語" + String(repeating: "。", count: 250) + "続きます。"
         let segments = JapaneseSpeechSegmenter.segments(paragraphs: [text], maximumCharacters: 60)

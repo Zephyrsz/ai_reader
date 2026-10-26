@@ -122,7 +122,9 @@ final class LibraryRepositoryTests: XCTestCase {
         let source = url.appendingPathComponent("scan.pdf"); try Data("%PDF-example".utf8).write(to: source)
         let scanned = try await repo.importDocument(sourceURL: source, text: "", kind: .pdf, pageTexts: [""])
         XCTAssertEqual(scanned.pageTexts, [""])
-        do { _ = try await repo.importDocument(sourceURL: source, text: "", kind: .pdf, pageTexts: Array(repeating: "", count: 301), allowDuplicate: true); XCTFail("Overlong PDF accepted") }
+        let maximum = try await repo.importDocument(sourceURL: source, text: "", kind: .pdf, pageTexts: Array(repeating: "", count: 1000), allowDuplicate: true)
+        XCTAssertEqual(maximum.pageTexts.count, 1000)
+        do { _ = try await repo.importDocument(sourceURL: source, text: "", kind: .pdf, pageTexts: Array(repeating: "", count: 1001), allowDuplicate: true); XCTFail("Overlong PDF accepted") }
         catch { XCTAssertEqual(error as? RepositoryError, .tooManyPages) }
         do { _ = try await repo.createText(title: "long", body: String(repeating: "あ", count: 200_001)); XCTFail("Text limit ignored") }
         catch { XCTAssertEqual(error as? RepositoryError, .textTooLong) }

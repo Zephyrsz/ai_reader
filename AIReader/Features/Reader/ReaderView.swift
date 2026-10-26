@@ -121,13 +121,12 @@ struct ReaderView: View {
                     else {
                         VStack(alignment: .leading, spacing: 16) {
                             ForEach(Array(document.paragraphs.enumerated()), id: \.offset) { index, paragraph in
-                                Text(paragraph)
+                                Text(highlightedParagraph(paragraph, index: index, document: document))
                                     .font(.system(size: CGFloat(store.preferences.fontSize) * bodyScale, weight: .regular, design: .serif))
                                     .lineSpacing(CGFloat(store.preferences.lineSpacing))
                                     .foregroundStyle(AppTheme.text)
                                     .textSelection(.enabled)
                                     .accessibilityIdentifier(index == 0 ? "reader.text" : "reader.paragraph.\(index)")
-                                    .background(store.preferences.followSpeech && store.playback.documentID == document.id && store.playback.paragraphIndex == index && store.playback.hasSession ? AppTheme.accent.opacity(0.10) : Color.clear)
                                     .background(ParagraphFrameReporter(index: index))
                                     .id(index)
                             }
@@ -179,6 +178,17 @@ struct ReaderView: View {
 
     @State private var visibleHeight: CGFloat = 500
     @State private var currentParagraph = 0
+
+    private func highlightedParagraph(_ paragraph: String, index: Int, document: ReaderDocument) -> AttributedString {
+        var text = AttributedString(paragraph)
+        guard store.preferences.followSpeech, store.playback.documentID == document.id,
+              let sentence = store.playback.highlightedSentence, sentence.paragraphIndex == index,
+              sentence.sentenceRange.upperBound <= text.characters.count else { return text }
+        let start = text.characters.index(text.startIndex, offsetBy: sentence.sentenceRange.lowerBound)
+        let end = text.characters.index(text.startIndex, offsetBy: sentence.sentenceRange.upperBound)
+        text[start..<end][AttributeScopes.SwiftUIAttributes.BackgroundColorAttribute.self] = AppTheme.accent.opacity(0.18)
+        return text
+    }
 
     private func pdfContent(_ document: ReaderDocument) -> some View {
         VStack(spacing: 0) {
@@ -236,11 +246,47 @@ struct ReaderView: View {
         let active = store.playback.documentID == document.id
         let supported = document.language == "ja-JP" && !document.text.isEmpty
         return VStack(spacing: 6) {
-            Text(supported ? (active ? store.playback.status : "日语 · 离线朗读") : "当前仅支持有文字的日语资料")
-                .font(.caption).foregroundStyle(AppTheme.secondaryText)
-                .lineLimit(3).accessibilityIdentifier("reader.speechStatus")
             HStack(spacing: 12) {
-                Button { showingVoiceSettings = true } label: { Image(systemName: "waveform").frame(width: 44, height: 44) }.accessibilityLabel("音色设置")
+                Menu {
+                    ForEach(SpeechVoice.allCases) { voice in
+                        Button {
+                            Task {
+                                guard store.playback.canChangeVoice else { return }
+                                var preferences = store.preferences
+                                preferences.voice = voice
+                                await store.savePreferences(preferences)
+                            }
+                        } label: {
+                            if store.preferences.voice == voice { Label(voice.name, systemImage: "checkmark") }
+                            else { Text(voice.name) }
+                        }
+                        .accessibilityIdentifier("reader.voice.\(voice.rawValue)")
+                    }
+                    Divider()
+                    Button("音色设置与试听", systemImage: "waveform") { showingVoiceSettings = true }
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "person.wave.2")
+                        Text(store.preferences.voice.name).lineLimit(1)
+                        Image(systemName: "chevron.down").imageScale(.small)
+                    }
+                    .font(.caption.weight(.medium))
+                    .frame(minHeight: 44)
+                }
+                .disabled(!store.playback.canChangeVoice)
+                .accessibilityLabel("朗读音色")
+                .accessibilityValue(store.preferences.voice.name)
+                .accessibilityHint(store.playback.canChangeVoice ? "选择朗读音色" : "暂停或停止朗读后可切换")
+                .accessibilityIdentifier("reader.voice")
+                Spacer(minLength: 0)
+                Text(supported ? (active ? store.playback.status : "日语 · 离线朗读") : "当前仅支持有文字的日语资料")
+                    .font(.caption).foregroundStyle(AppTheme.secondaryText)
+                    .multilineTextAlignment(.trailing).lineLimit(3)
+                    .accessibilityIdentifier("reader.speechStatus")
+            }
+            .padding(.horizontal, 24)
+            HStack(spacing: 12) {
+                Color.clear.frame(width: 48, height: 44).accessibilityHidden(true)
                 Button { store.playback.skip(-1) } label: { Image(systemName: "backward.end.fill").frame(width: 44, height: 44) }
                     .disabled(!active || store.playback.segmentIndex == 0).accessibilityLabel("上一句").accessibilityIdentifier("reader.previous")
                 Button {

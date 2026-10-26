@@ -90,7 +90,7 @@ public actor LibraryRepository {
         try validateFolder(folderID)
         let ext = sourceURL.pathExtension.lowercased()
         guard (kind == .pdf && ext == "pdf") || (kind == .txt && ext == "txt") || (kind == .markdown && ext == "md") else { throw RepositoryError.unsupportedFile }
-        guard pageTexts.count <= 300 else { throw RepositoryError.tooManyPages }
+        guard pageTexts.count <= 1000 else { throw RepositoryError.tooManyPages }
         if kind == .pdf {
             guard text.count <= 200_000 else { throw RepositoryError.textTooLong }
         } else { try validateBody(text) }

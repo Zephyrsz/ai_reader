@@ -4,6 +4,35 @@ import ReaderCore
 
 @MainActor
 final class PlaybackTests: XCTestCase {
+    func testSentenceHighlightMovesWithinParagraphAndClearsOnStop() async throws {
+        let (coordinator, runtime, root) = makeCoordinator()
+        defer { coordinator.stop(); runtime.proceed.signal(); try? FileManager.default.removeItem(at: root) }
+        XCTAssertNil(coordinator.highlightedSentence)
+        XCTAssertTrue(coordinator.canChangeVoice)
+        coordinator.start(document: ReaderDocument(title: "Test", text: "同じ文。同じ文。\n次の段落。"), paragraph: 0, voice: .metan, rate: 1)
+        try await waitUntil { runtime.started }
+        coordinator.pause()
+        XCTAssertNil(coordinator.highlightedSentence)
+        runtime.proceed.signal()
+        try await waitUntil { coordinator.state == .paused }
+        coordinator.resume()
+        try await waitUntil { coordinator.state == .playing && coordinator.highlightedSentence != nil }
+        XCTAssertEqual(coordinator.highlightedSentence?.sentenceRange, 0..<4)
+        XCTAssertFalse(coordinator.canChangeVoice)
+        coordinator.pause()
+        XCTAssertTrue(coordinator.canChangeVoice)
+        XCTAssertEqual(coordinator.highlightedSentence?.sentenceRange, 0..<4)
+        runtime.proceed.signal()
+        coordinator.skip(1)
+        XCTAssertEqual(coordinator.highlightedSentence?.sentenceRange, 0..<4)
+        try await waitUntil { coordinator.state == .playing && coordinator.highlightedSentence?.sentenceRange == 4..<8 }
+        XCTAssertEqual(coordinator.highlightedSentence?.paragraphIndex, 0)
+        XCTAssertEqual(coordinator.highlightedSentence?.sentenceRange, 4..<8)
+        coordinator.stop()
+        XCTAssertNil(coordinator.highlightedSentence)
+        XCTAssertTrue(coordinator.canChangeVoice)
+    }
+
     func testPauseWhilePreparingKeepsLateAudioPausedThenResumes() async throws {
         let (coordinator, runtime, root) = makeCoordinator()
         defer { coordinator.stop(); runtime.proceed.signal(); try? FileManager.default.removeItem(at: root) }
