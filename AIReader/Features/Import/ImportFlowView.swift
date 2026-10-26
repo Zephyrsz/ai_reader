@@ -39,8 +39,8 @@ struct ImportFlowView: View {
     @State private var duplicateIDs: [UUID: UUID] = [:]
     @State private var cancelledItems: Set<UUID> = []
 
-    private let maxBytes: Int64 = 50 * 1024 * 1024
-    private let maxCharacters = 200_000
+    private let maxBytes: Int64 = 200 * 1024 * 1024
+    private let maxCharacters = 10_000_000
     private let maxPages = 1000
 
     var body: some View {

@@ -92,12 +92,12 @@ public actor LibraryRepository {
         guard (kind == .pdf && ext == "pdf") || (kind == .txt && ext == "txt") || (kind == .markdown && ext == "md") else { throw RepositoryError.unsupportedFile }
         guard pageTexts.count <= 1000 else { throw RepositoryError.tooManyPages }
         if kind == .pdf {
-            guard text.count <= 200_000 else { throw RepositoryError.textTooLong }
+            guard text.count <= 10_000_000 else { throw RepositoryError.textTooLong }
         } else { try validateBody(text) }
         let size = try sourceURL.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
-        guard size <= 50 * 1024 * 1024 else { throw RepositoryError.fileTooLarge }
+        guard size <= 200 * 1024 * 1024 else { throw RepositoryError.fileTooLarge }
         let data = try Data(contentsOf: sourceURL, options: .mappedIfSafe)
-        guard data.count <= 50 * 1024 * 1024 else { throw RepositoryError.fileTooLarge }
+        guard data.count <= 200 * 1024 * 1024 else { throw RepositoryError.fileTooLarge }
         let digest = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
         if !allowDuplicate, let existing = records.values.first(where: { $0.deletedAt == nil && $0.sourceFingerprint == digest }) {
             throw RepositoryError.duplicate(existing.id)
@@ -237,7 +237,7 @@ public actor LibraryRepository {
     }
 
     public func saveDraft(_ draft: EditorDraft) throws {
-        guard draft.body.count <= 200_000 else { throw RepositoryError.textTooLong }
+        guard draft.body.count <= 10_000_000 else { throw RepositoryError.textTooLong }
         try Self.encode(draft).write(to: draftURL(draft.id), options: .atomic); draftRecords[draft.id] = draft
     }
 
@@ -340,7 +340,7 @@ public actor LibraryRepository {
     }
     private func validateBody(_ body: String) throws {
         guard !body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { throw RepositoryError.emptyText }
-        guard body.count <= 200_000 else { throw RepositoryError.textTooLong }
+        guard body.count <= 10_000_000 else { throw RepositoryError.textTooLong }
     }
     private func validateFolder(_ id: UUID?) throws {
         if let id, !catalog.folders.contains(where: { $0.id == id }) { throw RepositoryError.invalidFolder }
