@@ -46,7 +46,7 @@ struct ImportFlowView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.md) {
                     ForEach(items.indices, id: \.self) { index in itemView(index) }
                     if items.allSatisfy({ $0.stage == .finished || $0.stage == .cancelled }) {
                         Button("完成") { dismiss() }.buttonStyle(.borderedProminent).frame(maxWidth: .infinity, minHeight: 48)
@@ -67,10 +67,10 @@ struct ImportFlowView: View {
 
     @ViewBuilder private func itemView(_ index: Int) -> some View {
         let item = items[index]
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.sm) {
             HStack(alignment: .top) {
                 Image(systemName: item.kind == .pdf ? "doc.richtext" : "doc.text").font(.title2).foregroundStyle(AppTheme.accent)
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.xxs) {
                     Text(item.url.lastPathComponent).font(.headline).lineLimit(2)
                     Text("\(item.kind.label) · \(ByteCountFormatter.string(fromByteCount: item.fileSize, countStyle: .file))").font(.caption).foregroundStyle(AppTheme.secondaryText)
                 }
@@ -110,7 +110,7 @@ struct ImportFlowView: View {
                     Button("解锁并解析") { Task { await parseItem(index) } }.buttonStyle(.borderedProminent).accessibilityIdentifier("import.unlockPDF")
                 }
                     if !item.text.isEmpty {
-                    Text(item.text.prefix(4000)).font(.system(size: 15)).lineLimit(12).padding(12).frame(maxWidth: .infinity, alignment: .leading).background(AppTheme.secondarySurface, in: RoundedRectangle(cornerRadius: 8))
+                    Text(item.text.prefix(4000)).font(.callout).lineLimit(12).padding(AppTheme.Spacing.sm).frame(maxWidth: .infinity, alignment: .leading).background(AppTheme.secondarySurface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.input))
                     Button("确认导入") { Task { await importItem(index) } }.buttonStyle(.borderedProminent).frame(minHeight: 44).accessibilityIdentifier("import.confirm")
                     } else if item.kind == .pdf, item.stagedURL != nil, item.warning != "password" {
                         Button("仅导入 PDF 原文") { Task { await importItem(index) } }.buttonStyle(.borderedProminent).frame(minHeight: 44)
@@ -127,7 +127,7 @@ struct ImportFlowView: View {
                 }.buttonStyle(.bordered).accessibilityIdentifier("import.openImported")
             }
         }
-        .padding(16).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 12))
+        .padding(AppTheme.Spacing.md).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.input))
     }
 
     @ViewBuilder private func statusView(_ stage: ImportStage) -> some View {

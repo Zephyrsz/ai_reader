@@ -59,10 +59,10 @@ struct ReaderView: View {
                 .onChange(of: scenePhase) { _, phase in if phase != .active { saveNow() } }
                 .sheet(isPresented: $showingSpeed) { SpeedSheet(documentID: documentID) }
                 .sheet(isPresented: $showingVoiceSettings) {
-                    NavigationStack { VoiceSettingsView().toolbar { ToolbarItem(placement: .topBarTrailing) { Button("关闭") { showingVoiceSettings = false } } } }
+                    NavigationStack { VoiceSettingsView().toolbar { ToolbarItem(placement: .topBarTrailing) { Button("完成") { showingVoiceSettings = false }.frame(minWidth: 44, minHeight: 44) } } }
                 }
                 .sheet(isPresented: $showingAppearance) {
-                    NavigationStack { ReadingAppearanceSheet().toolbar { ToolbarItem(placement: .topBarTrailing) { Button("关闭") { showingAppearance = false } } } }
+                    NavigationStack { ReadingAppearanceSheet().toolbar { ToolbarItem(placement: .topBarTrailing) { Button("完成") { showingAppearance = false }.frame(minWidth: 44, minHeight: 44) } } }
                 }
                 .sheet(isPresented: $showingBookmarks) { bookmarkSheet(document) }
                 .alert("重命名", isPresented: $showingRename) {
@@ -358,7 +358,7 @@ struct ReaderView: View {
                 }
             }
             .navigationTitle("目录与书签")
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("关闭") { showingBookmarks = false }.frame(minWidth: 44, minHeight: 44) } }
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("完成") { showingBookmarks = false }.frame(minWidth: 44, minHeight: 44) } }
         }
     }
 

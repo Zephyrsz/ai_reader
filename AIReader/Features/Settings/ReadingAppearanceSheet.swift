@@ -80,6 +80,7 @@ public struct ReadingAppearanceSheet: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("完成") { dismiss() }
                     .frame(minWidth: 44, minHeight: 44)
+                    .accessibilityIdentifier("appearance.done")
             }
         }
         .task { loadPreferences() }

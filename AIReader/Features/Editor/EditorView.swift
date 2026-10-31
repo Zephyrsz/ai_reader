@@ -33,9 +33,9 @@ struct EditorView: View {
                 ToolbarItem(placement: .confirmationAction) { Button("保存") { saveDocument() }.disabled(!canSave).accessibilityIdentifier("saveText") }
             }
             .safeAreaInset(edge: .bottom) {
-                HStack(spacing: 16) {
+                HStack(spacing: AppTheme.Spacing.md) {
                     Button("粘贴") { pasteFromClipboard() }
-                    Spacer(minLength: 8)
+                    Spacer(minLength: AppTheme.Spacing.xs)
                     Button("撤销") { undoBody() }.disabled(undoHistory.isEmpty).accessibilityIdentifier("editor.undo")
                     Button("重做") { redoBody() }.disabled(redoHistory.isEmpty).accessibilityIdentifier("editor.redo")
                     Button("收起键盘") { bodyFocused = false }
@@ -97,13 +97,13 @@ struct EditorView: View {
     }
 
     private var titleSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
             Text("标题").font(.subheadline).foregroundStyle(AppTheme.secondaryText)
             TextField("留空时使用正文首行", text: $draft.title)
                 .font(.headline)
-                .padding(14)
-                .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 14))
-                .overlay(RoundedRectangle(cornerRadius: 14).stroke(AppTheme.secondarySurface, lineWidth: 1))
+                .padding(AppTheme.Spacing.md)
+                .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.button))
+                .overlay(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.button).stroke(AppTheme.secondarySurface, lineWidth: 1))
                 .accessibilityIdentifier("editorTitle")
         }
     }
@@ -112,7 +112,7 @@ struct EditorView: View {
         HStack {
             Label("\(AppTheme.languageName(for: draft.language)) · \(draft.language)", systemImage: "character.book.closed")
                 .font(.caption.weight(.medium)).foregroundStyle(AppTheme.secondaryText)
-                .padding(.horizontal, 12).padding(.vertical, 8).background(AppTheme.secondarySurface, in: Capsule())
+                .padding(.horizontal, AppTheme.Spacing.sm).padding(.vertical, AppTheme.Spacing.xs).background(AppTheme.secondarySurface, in: Capsule())
             Spacer()
             Text("\(draft.body.count) 字").font(.caption).foregroundStyle(AppTheme.secondaryText)
                 .accessibilityIdentifier("editor.characterCount")
@@ -120,7 +120,7 @@ struct EditorView: View {
     }
 
     private var bodySection: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
             HStack {
                 Text("正文").font(.subheadline).foregroundStyle(AppTheme.secondaryText)
                 Spacer()
@@ -129,10 +129,10 @@ struct EditorView: View {
                     .accessibilityIdentifier("editor.paste")
             }
             TextEditor(text: $draft.body)
-                .font(.system(size: 18)).lineSpacing(8).scrollContentBackground(.hidden)
-                .padding(8).frame(minHeight: 330)
-                .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 18))
-                .overlay(RoundedRectangle(cornerRadius: 18).stroke(AppTheme.secondarySurface, lineWidth: 1))
+                .font(.body).lineSpacing(AppTheme.Spacing.xs).scrollContentBackground(.hidden)
+                .padding(AppTheme.Spacing.xs).frame(minHeight: 330)
+                .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card))
+                .overlay(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card).stroke(AppTheme.secondarySurface, lineWidth: 1))
                 .focused($bodyFocused).accessibilityIdentifier("editorBody")
         }
     }
