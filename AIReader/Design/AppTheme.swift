@@ -45,13 +45,41 @@ public enum AppTheme {
         default: return Locale(identifier: "zh_CN").localizedString(forIdentifier: code) ?? code
         }
     }
+
+    // MARK: - Layout Constants
+
+    /// 间距刻度 (4 / 8 / 12 / 16 / 24 / 32 / 40pt)
+    public enum Spacing {
+        public static let xxs: CGFloat = 4
+        public static let xs: CGFloat = 8
+        public static let sm: CGFloat = 12
+        public static let md: CGFloat = 16
+        public static let lg: CGFloat = 24
+        public static let xl: CGFloat = 32
+        public static let xxl: CGFloat = 40
+    }
+
+    /// 圆角半径
+    public enum CornerRadius {
+        public static let button: CGFloat = 14
+        public static let input: CGFloat = 12
+        public static let card: CGFloat = 18
+        public static let panel: CGFloat = 32
+    }
+
+    /// 图标尺寸
+    public enum IconSize {
+        public static let small: CGFloat = 19
+        public static let medium: CGFloat = 24
+        public static let large: CGFloat = 44
+    }
 }
 
 public extension View {
     func readerCard() -> some View {
-        padding(16)
-            .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).stroke(AppTheme.secondarySurface, lineWidth: 0.7))
+        padding(AppTheme.Spacing.md)
+            .background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card, style: .continuous).stroke(AppTheme.secondarySurface, lineWidth: 0.7))
     }
 }
 
@@ -61,7 +89,7 @@ public struct LocalBadge: View {
         Label("本地优先", systemImage: "internaldrive.fill")
             .font(.caption.weight(.medium))
             .foregroundStyle(AppTheme.success)
-            .padding(.horizontal, 12).padding(.vertical, 7)
+            .padding(.horizontal, AppTheme.Spacing.sm).padding(.vertical, 7)
             .background(AppTheme.successSurface, in: Capsule())
             .accessibilityElement(children: .combine)
     }
@@ -71,10 +99,10 @@ public struct DocumentRow: View {
     public let document: ReaderDocument
     public init(document: ReaderDocument) { self.document = document }
     public var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: AppTheme.Spacing.sm) {
             Image(systemName: document.kind == .pdf ? "doc.richtext" : "text.alignleft")
-                .font(.system(size: 19, weight: .medium)).foregroundStyle(AppTheme.accent)
-                .frame(width: 44, height: 48).background(AppTheme.secondarySurface, in: RoundedRectangle(cornerRadius: 12))
+                .font(.system(size: AppTheme.IconSize.small, weight: .medium)).foregroundStyle(AppTheme.accent)
+                .frame(width: 44, height: 48).background(AppTheme.secondarySurface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.input))
             VStack(alignment: .leading, spacing: 5) {
                 Text(document.title).font(.headline).foregroundStyle(AppTheme.text).lineLimit(2)
                 Text("\(document.kind.label) · \(AppTheme.languageName(for: document.language)) · \(document.modifiedAt.formatted(date: .abbreviated, time: .omitted))")

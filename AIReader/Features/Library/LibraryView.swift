@@ -48,11 +48,11 @@ struct LibraryView: View {
                     }
                     if visible.isEmpty { emptyResults }
                     else {
-                        LazyVStack(spacing: 10) {
+                        LazyVStack(spacing: AppTheme.Spacing.xs) {
                             ForEach(visible) { document in documentCell(document) }
                         }
                     }
-                }.padding(.horizontal, 20).padding(.top, 16).padding(.bottom, 24)
+                }.padding(.horizontal, 20).padding(.top, AppTheme.Spacing.md).padding(.bottom, AppTheme.Spacing.lg)
             }
         }
         .background(AppTheme.background.ignoresSafeArea())
@@ -97,7 +97,7 @@ struct LibraryView: View {
             Text("文件库").font(.largeTitle.bold()).foregroundStyle(AppTheme.text).accessibilityIdentifier("library")
             Spacer()
             NavigationLink { TrashView() } label: { Image(systemName: "trash").frame(width: 44, height: 44) }.accessibilityLabel("最近删除")
-            Button { store.newText() } label: { Image(systemName: "plus").font(.system(size: 19, weight: .semibold)).foregroundStyle(.white).frame(width: 44, height: 44).background(AppTheme.primaryButton, in: Circle()) }
+            Button { store.newText() } label: { Image(systemName: "plus").font(.system(size: AppTheme.IconSize.small, weight: .semibold)).foregroundStyle(.white).frame(width: 44, height: 44).background(AppTheme.primaryButton, in: Circle()) }
                 .accessibilityLabel("新建文本").accessibilityIdentifier("library.add")
             Menu {
                 Button("新建文件夹", systemImage: "folder.badge.plus") { editingFolder = nil; folderName = ""; showingFolderName = true }
@@ -118,24 +118,24 @@ struct LibraryView: View {
             }.disabled(selected.isEmpty)
             Button { runBatch { repo in for id in selected where store.document(id)?.isFavorite == false { try await repo.toggleFavorite(id: id) } } } label: { Image(systemName: "star") }.disabled(selected.isEmpty).accessibilityLabel("收藏所选")
             Button(role: .destructive) { confirmingDelete = true } label: { Image(systemName: "trash") }.disabled(selected.isEmpty).accessibilityLabel("删除所选")
-        }.padding(.horizontal, 20).padding(.vertical, 12).background(AppTheme.surface)
+        }.padding(.horizontal, 20).padding(.vertical, AppTheme.Spacing.sm).background(AppTheme.surface)
     }
 
     private var searchBox: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: AppTheme.Spacing.xs) {
             Image(systemName: "magnifyingglass").foregroundStyle(AppTheme.secondaryText)
             TextField("搜索标题或正文", text: $search).textInputAutocapitalization(.never).autocorrectionDisabled().accessibilityIdentifier("library.search")
             if !search.isEmpty { Button { search = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(AppTheme.secondaryText) }.accessibilityLabel("清除搜索") }
-        }.padding(.horizontal, 14).frame(minHeight: 48).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 14)).overlay(RoundedRectangle(cornerRadius: 14).stroke(AppTheme.secondarySurface, lineWidth: 1))
+        }.padding(.horizontal, AppTheme.Spacing.md).frame(minHeight: 48).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.button)).overlay(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.button).stroke(AppTheme.secondarySurface, lineWidth: 1))
     }
 
     private var filterPicker: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
+            HStack(spacing: AppTheme.Spacing.xs) {
                 ForEach(LibraryFilter.allCases, id: \.self) { value in
                     Button { filter = value } label: {
                         Text(value.label).font(.subheadline.weight(.medium)).foregroundStyle(filter == value ? AppTheme.accent : AppTheme.secondaryText)
-                            .padding(.horizontal, 16).frame(minHeight: 40).background(filter == value ? AppTheme.accent.opacity(0.12) : AppTheme.surface, in: Capsule())
+                            .padding(.horizontal, AppTheme.Spacing.md).frame(minHeight: 40).background(filter == value ? AppTheme.accent.opacity(0.12) : AppTheme.surface, in: Capsule())
                     }.accessibilityAddTraits(filter == value ? .isSelected : []).accessibilityIdentifier("library.filter.\(value.rawValue)")
                 }
             }
@@ -143,7 +143,7 @@ struct LibraryView: View {
     }
 
     private var folderSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
             HStack {
                 Text("文件夹").font(.headline).foregroundStyle(AppTheme.text)
                 Spacer()
@@ -151,19 +151,19 @@ struct LibraryView: View {
                     .font(.subheadline).accessibilityIdentifier("library.manageFolders")
             }
             if store.snapshot.folders.isEmpty {
-                Button { editingFolder = nil; folderName = ""; showingFolderName = true } label: { Label("新建文件夹", systemImage: "folder.badge.plus").font(.subheadline).frame(maxWidth: .infinity, minHeight: 54).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 14)) }
+                Button { editingFolder = nil; folderName = ""; showingFolderName = true } label: { Label("新建文件夹", systemImage: "folder.badge.plus").font(.subheadline).frame(maxWidth: .infinity, minHeight: 54).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.button)) }
             } else {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: AppTheme.Spacing.xs) {
                     ForEach(store.snapshot.folders) { folder in
                         Button { folderID = folder.id } label: {
-                            VStack(alignment: .leading, spacing: 10) {
+                            VStack(alignment: .leading, spacing: AppTheme.Spacing.xs) {
                                 HStack { Image(systemName: "folder.fill").foregroundStyle(AppTheme.accent); Spacer(); Menu {
                                     Button("重命名", systemImage: "pencil") { editingFolder = folder; folderName = folder.name; showingFolderName = true }
                                     Button("删除文件夹", systemImage: "trash", role: .destructive) { Task { _ = await store.perform { try await $0.deleteFolder(id: folder.id) } } }
                                 } label: { Image(systemName: "ellipsis").frame(width: 44, height: 44) }.accessibilityLabel("管理\(folder.name)") }
                                 Text(folder.name).font(.headline).lineLimit(2).frame(maxWidth: .infinity, alignment: .leading)
                                 Text("\(store.documents.filter { $0.folderID == folder.id }.count) 篇资料").font(.caption).foregroundStyle(AppTheme.secondaryText)
-                            }.foregroundStyle(AppTheme.text).padding(14).frame(maxWidth: .infinity, minHeight: 110, alignment: .leading).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 18))
+                            }.foregroundStyle(AppTheme.text).padding(AppTheme.Spacing.md).frame(maxWidth: .infinity, minHeight: 110, alignment: .leading).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card))
                         }.buttonStyle(.plain).accessibilityIdentifier("library.folder.\(folder.id)")
                     }
                 }
@@ -172,7 +172,7 @@ struct LibraryView: View {
     }
 
     private func documentCell(_ document: ReaderDocument) -> some View {
-        HStack(spacing: 12) {
+        HStack(spacing: AppTheme.Spacing.sm) {
             if batchMode {
                 Image(systemName: selected.contains(document.id) ? "checkmark.circle.fill" : "circle").font(.title3).foregroundStyle(selected.contains(document.id) ? AppTheme.accent : AppTheme.secondaryText)
             }
@@ -191,7 +191,7 @@ struct LibraryView: View {
                     Button("移入最近删除", systemImage: "trash", role: .destructive) { Task { _ = await store.perform { try await $0.trash(ids: [document.id]) } } }
                 } label: { Image(systemName: "ellipsis").frame(width: 44, height: 44) }.accessibilityLabel("\(document.title) 操作")
             }
-        }.padding(12).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: 18)).overlay(RoundedRectangle(cornerRadius: 18).stroke(AppTheme.secondarySurface, lineWidth: 0.7))
+        }.padding(AppTheme.Spacing.sm).background(AppTheme.surface, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card)).overlay(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.card).stroke(AppTheme.secondarySurface, lineWidth: 0.7))
     }
 
     private var emptyResults: some View {
